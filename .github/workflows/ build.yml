@@ -30,7 +30,7 @@ jobs:
         run: npm run build
 
       - name: Login to npm
-        run: npm login --registry=https://registry.npmjs.org/ --scope=@your-npm-scope
+        run: npm login
         env:
           NPM_USERNAME: ${{ secrets.NPM_USERNAME }}
           NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
