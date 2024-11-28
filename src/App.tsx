@@ -1,6 +1,7 @@
-import { Card3, Login, Search } from "./index.ts";
+import { Card3 } from "./index.ts";
 
 function App() {
+
   return (
     <>
       <Card3 list={[
