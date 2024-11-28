@@ -13,7 +13,6 @@ interface GoodsType{
 interface Card3Props {
   list:GoodsType[];
 }
-
 const Card3 = (props: Card3Props) => {
   const { list } = props;
   return (
