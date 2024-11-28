@@ -29,14 +29,11 @@ jobs:
       - name: Build package
         run: npm run build
 
-      - name: Login to npm using token
-        run: echo "//registry.npm.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: Version package
         run: npm run v
 
       - name: Publish package
         run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}  # 使用 GitHub Secrets 存储 npm
 
