@@ -30,14 +30,13 @@ jobs:
         run: npm run build
 
       - name: Login to npm using token
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_PASSWORD }}" > .npmrc
+        run: echo "//registry.npm.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
         env:
-          NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Version package
         run: npm run v
 
       - name: Publish package
         run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_PASSWORD }}  # 如果使用令牌，确保使用正确的环境变量名
+
