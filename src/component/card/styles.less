@@ -1,0 +1,41 @@
+.card3_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  .card3 {
+    background-color: #fafafa;
+    font-size: 14px;
+    box-sizing: content-box;
+    display: flex;
+    width: calc(20% - 10px);
+    flex-direction: column;
+    text-align: center;
+    &:hover{
+      cursor: pointer;
+      img{
+        opacity: 0.8;
+      }
+    }
+    img {
+      height: 160px;
+      object-fit: contain;
+      margin: 30px;
+      width: calc(100% - 60px);
+    }
+    .img_box {
+      background: #fff;
+      margin-bottom: 20px;
+    }
+    .name {
+    }
+    .intro {
+      font-size: 12px;
+      color: #b0b0b0;
+      margin: 15px 0;
+    }
+    .item_price {
+      color: #01873b;
+      margin-bottom: 20px;
+    }
+  }
+}
