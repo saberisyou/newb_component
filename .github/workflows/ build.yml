@@ -1,4 +1,4 @@
-name: Build on Push
+name: Build and Publish npm Package
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main  # 你可以指定要监听的分支
 
 jobs:
-  build:
+  build-and-publish:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,5 +21,19 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run build
-        run: npm run deploy
+      - name: Build package
+        run: npm run build
+
+      - name: Login to npm
+        run: npm login --registry=https://registry.npmjs.org/ --scope=@your-npm-scope
+        env:
+          NPM_USERNAME: ${{ secrets.NPM_USERNAME }}
+          NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
+
+      - name: Version package
+        run: npm run v
+
+      - name: Publish package
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PASSWORD }}  # 如果使用令牌，确保使用正确的环境变量名
