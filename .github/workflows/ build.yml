@@ -29,10 +29,9 @@ jobs:
       - name: Build package
         run: npm run build
 
-      - name: Login to npm
-        run: npm login --token=${{ secrets.NPM_PASSWORD }}
+      - name: Login to npm using token
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_PASSWORD }}" > .npmrc
         env:
-          NPM_USERNAME: ${{ secrets.NPM_USERNAME }}
           NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
 
       - name: Version package
