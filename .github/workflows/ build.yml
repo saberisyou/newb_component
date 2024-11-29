@@ -39,7 +39,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-
+      # 打包
+      - name: Build Packages
+        run: pnpm run build
 
       # 这一步是最重要的。使用changesets/action自动创建 PR 或者发布
       - name: Create Release Pull Request or Publish
@@ -59,13 +61,6 @@ jobs:
 
 
 
-
-
-#
-#      # 打包
-#      - name: Build Packages
-#        run: pnpm run build
-#
 #      - name: pnpm version patch
 #        run: pnpm version patch
 #        env:
