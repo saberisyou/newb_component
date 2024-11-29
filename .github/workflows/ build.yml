@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - main
-      - master
 
 # 权限，这里需要写入仓库内容和包
 permissions:
