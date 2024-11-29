@@ -45,6 +45,7 @@ const Card3 = (props: Card3Props) => {
             <p className="name">{goodsName}</p>
             <p className="intro">{goodsIntro}</p>
             <p className="item_price">{sellingPrice}</p>
+
           </div>
         );
       })}
