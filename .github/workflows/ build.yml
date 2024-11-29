@@ -39,19 +39,35 @@ jobs:
       - name: Build Packages
         run: pnpm run build
 
-      # 这一步是最重要的。使用changesets/action自动创建 PR 或者发布
-      - name: Create Release Pull Request or Publish
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          # 执行更新版本和发布的命令
-          version: pnpm run version
-          publish: pnpm run pub
-          commit: '[ci] release'
-          title: '[ci] release'
+      - name: Build Packages
+        run: pnpm version patch
         env:
           # GITHUB_TOKEN 是 CI 里自带的默认 token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # NPM_TOKEN 需要稍后在 npm 网站生成。
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Build Packages
+        run: pnpm publish
+        env:
+          # GITHUB_TOKEN 是 CI 里自带的默认 token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # NPM_TOKEN 需要稍后在 npm 网站生成。
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # 这一步是最重要的。使用changesets/action自动创建 PR 或者发布
+#      - name: Create Release Pull Request or Publish
+#        id: changesets
+#        uses: changesets/action@v1
+#        with:
+#          # 执行更新版本和发布的命令
+#          version: pnpm run version
+#          publish: pnpm run pub
+#          commit: '[ci] release'
+#          title: '[ci] release'
+#        env:
+#          # GITHUB_TOKEN 是 CI 里自带的默认 token
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          # NPM_TOKEN 需要稍后在 npm 网站生成。
+#          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
