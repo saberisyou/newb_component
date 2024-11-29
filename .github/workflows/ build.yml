@@ -46,6 +46,15 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: Check Git status
+        run: git status
+
+      - name: Clean untracked files
+        run: git clean -fd
+
+      - name: Install dependencies
+        run: npm ci
+
       - name:  npm version patch
         run: npm version patch
 
