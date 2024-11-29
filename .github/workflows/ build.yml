@@ -6,6 +6,12 @@ on:
   push:
     branches:
       - main
+      - master
+
+# 权限，这里需要写入仓库内容和包
+permissions:
+  contents: read  # 允许读取仓库内容
+  packages: write # 允许写入包（发布包）
 
 # 默认shell
 defaults:
