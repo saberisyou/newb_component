@@ -41,6 +41,7 @@ const Card3 = (props: Card3Props) => {
             <div className={"img_box"}>
               <img src={goodsCoverImg} alt={goodsName} />
             </div>
+
             <p className="name">{goodsName}</p>
             <p className="intro">{goodsIntro}</p>
             <p className="discount">{discount}</p>
