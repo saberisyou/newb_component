@@ -60,10 +60,10 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 
-      - name: Login to npm using token
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+#      - name: Login to npm using token
+#        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+#        env:
+#          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 #      - name: pnpm version patch
 #        run: pnpm version patch
