@@ -44,7 +44,6 @@ jobs:
         with:
           # 执行更新版本和发布的命令
           version: npm run version
-          publish: npm publish
           commit: '[ci] release'
           title: '[ci] release'
         env:
