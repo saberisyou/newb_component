@@ -55,8 +55,8 @@ jobs:
         uses: changesets/action@v1
         with:
           # 执行更新版本和发布的命令
-          version: pnpm run version
-          publish: pnpm run pub
+          version: npm run version
+          publish: npm run pub
           commit: '[ci] release'
           title: '[ci] release'
         env:
