@@ -39,25 +39,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      # 打包
-      - name: Build Packages
-        run: pnpm run build
 
-      - name: pnpm version patch
-        run: pnpm version patch
-        env:
-          # GITHUB_TOKEN 是 CI 里自带的默认 token
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # NPM_TOKEN 需要稍后在 npm 网站生成。
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Login to npm using token
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: pnpm publish
-        run: npm publish
 
       # 这一步是最重要的。使用changesets/action自动创建 PR 或者发布
       - name: Create Release Pull Request or Publish
@@ -74,3 +56,29 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # NPM_TOKEN 需要稍后在 npm 网站生成。
           NPM_TOKEN: ${{ secrets.NPM_TOKEN2 }}
+
+
+
+
+
+#
+#      # 打包
+#      - name: Build Packages
+#        run: pnpm run build
+#
+#      - name: pnpm version patch
+#        run: pnpm version patch
+#        env:
+#          # GITHUB_TOKEN 是 CI 里自带的默认 token
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          # NPM_TOKEN 需要稍后在 npm 网站生成。
+#          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+#
+#      - name: Login to npm using token
+#        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+#        env:
+#          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+#
+#      - name: pnpm publish
+#        run: npm publish
+
