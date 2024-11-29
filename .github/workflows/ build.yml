@@ -51,11 +51,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # NPM_TOKEN 需要稍后在 npm 网站生成。
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Login to npm using token
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: pnpm publish
-        run: pnpm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish
 
       # 这一步是最重要的。使用changesets/action自动创建 PR 或者发布
 #      - name: Create Release Pull Request or Publish
