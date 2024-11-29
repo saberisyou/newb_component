@@ -41,15 +41,12 @@ jobs:
       - name: Build Packages
         run: npm run build
 
-      - name: Build Packages
-        run: npm run build
-
       - name: Login to npm using token
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: npm publish
+      - name:  npm version patch
         run: npm version patch
 
       - name: npm publish
