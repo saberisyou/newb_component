@@ -46,7 +46,7 @@ jobs:
         with:
           # 执行更新版本和发布的命令
           version: pnpm run version
-          publish: changeset publish
+          publish: pnpm run pub
           commit: '[ci] release'
           title: '[ci] release'
         env:
