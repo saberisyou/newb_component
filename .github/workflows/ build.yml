@@ -16,9 +16,7 @@ defaults:
 jobs:
   changelog:
     name: Changelog PR or Release
-    permissions:
-      contents: write
-      pages: write
+    permissions: write-all
     # 这里判断仓库owner是否是我自己，为了避免别人 fork 仓库触发，请自行修改
     runs-on: ubuntu-latest
     steps:
