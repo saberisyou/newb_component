@@ -22,27 +22,34 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2.2.1
+        with:
+          version: ^8.0
+
       # 设置 Node
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+          cache: 'pnpm'
 
       # 安装依赖
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
 
       # 打包
       - name: Build Packages
-        run: npm run build
+        run: pnpm run build
 
       # 这一步是最重要的。使用changesets/action自动创建 PR 或者发布
       - name: Create Release Pull Request or Publish
+        id: changesets
         uses: changesets/action@v1
         with:
           # 执行更新版本和发布的命令
-          version: npm version patch
-          publish: npm publish
+          version: pnpm run version
+          publish: pnpm exec changeset publish
           commit: '[ci] release'
           title: '[ci] release'
         env:
