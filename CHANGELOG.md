@@ -1,5 +1,11 @@
 # newb_component
 
+## 0.3.23
+
+### Patch Changes
+
+- aa2391c: 2
+
 ## 0.3.21
 
 ### Patch Changes
