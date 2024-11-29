@@ -33,16 +33,13 @@ jobs:
           git config --global user.email "575179887@qq.com"
           git config --global user.name "saberisyou"
 
-      - name: Install pnpm
-        run: npm install -g pnpm
-
       # 安装依赖
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       # 打包
       - name: Build Packages
-        run: pnpm run build
+        run: npm run deploy
 
 #       这一步是最重要的。使用changesets/action自动创建 PR 或者发布
       - name: Create Release Pull Request or Publish
