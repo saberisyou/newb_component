@@ -23,12 +23,12 @@ jobs:
         uses: actions/checkout@v3
 
       # 设置 Node
-      - name: Setup Node
+      - name: 安装Node
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      - name: Configure Git
+      - name: 配置Git
         run: |
           git config --global user.email "575179887@qq.com"
           git config --global user.name "saberisyou"
@@ -36,43 +36,41 @@ jobs:
         run: npm install -g pnpm
 
       # 安装依赖
-      - name: Install dependencies
+      - name: 安装依赖
         run: pnpm install
 
       # 打包
-      - name: Build Packages
+      - name: 构建npm包
         run: pnpm run build
 
-      # 这一步是最重要的。使用changesets/action自动创建 PR 或者发布
-      - name: Create Release Pull Request or Publish
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          # 执行更新版本和发布的命令
-          version: pnpm run version
-          publish: pnpm exec changeset publish
-          commit: '[ci] release'
-          title: '[ci] release'
+      - name: 版本更新
+        run: pnpm version patch
         env:
           # GITHUB_TOKEN 是 CI 里自带的默认 token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # NPM_TOKEN 需要稍后在 npm 网站生成。
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: 使用GitHub的token
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-#      - name: Login to npm using token
-#        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
-#        env:
-#          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: 推送npm版本
+        run: npm publish
 
-#      - name: pnpm version patch
-#        run: pnpm version patch
+#      # 这一步是最重要的。使用changesets/action自动创建 PR 或者发布
+#      - name: Create Release Pull Request or Publish
+#        id: changesets
+#        uses: changesets/action@v1
+#        with:
+#          # 执行更新版本和发布的命令
+#          version: pnpm run version
+#          publish: pnpm exec changeset publish
+#          commit: '[ci] release'
+#          title: '[ci] release'
 #        env:
 #          # GITHUB_TOKEN 是 CI 里自带的默认 token
 #          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #          # NPM_TOKEN 需要稍后在 npm 网站生成。
-#          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: pnpm publish
-        run: npm publish
-
+#          NPM_TOKEN: ${{ secrets.NPM_TOKEN2 }}
