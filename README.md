@@ -74,10 +74,10 @@ pnpm run build
     <!-- 引入 React 和 ReactDOM -->
     <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/newb_component@0.1.74/dist/newb_component.css" />
+    <link rel="stylesheet" href="https://unpkg.com/newb_component/dist/newb_component.css" />
     <!-- 引入您的组件库 -->
     <script type="module">
-      import {Search,Login} from "https://unpkg.com/newb_component@0.1.2/dist/my-react-components.es.js";
+      import {Search,Login} from "https://unpkg.com/newb_component/dist/my-react-components.es.js";
       function render(dom,reactFc,props={}){
       ReactDOM.createRoot(dom).render(
          React.createElement(reactFc,props),
