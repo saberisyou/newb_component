@@ -1,11 +1,11 @@
-import {Card3, Category} from "./index.ts";
+import {Card, Category} from "./index.ts";
 
 function App() {
 
   return (
     <>
       <Category />
-      <Card3
+      <Card.Card3
         title={"123"}
         list={[
         {
