@@ -77,14 +77,11 @@ pnpm run build
     <link rel="stylesheet" href="https://unpkg.com/newb_component/dist/newb_component.css" />
     <!-- 引入您的组件库 -->
     <script type="module">
-      import {Search,Login} from "https://unpkg.com/newb_component/dist/my-react-components.es.js";
-      function render(dom,reactFc,props={}){
-      ReactDOM.createRoot(dom).render(
-         React.createElement(reactFc,props),
-      );
-    }
-      render(document.getElementById("Login"),Login)
-      render(document.getElementById("Search"),Search,{name:123})
+      import Newbee,{Card,render} from "https://unpkg.com/newb_component@latest/dist/my-react-components.es.js";
+      const newGoodses = [];
+      console.log(newGoodses);
+      console.log(Newbee);
+      render(document.getElementById('card3'),Card.Card3,{list:newGoodses,title:"yueyue"})
     </script>
   </head>
   <body>
