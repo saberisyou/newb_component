@@ -1,8 +1,20 @@
-import { Search, Card, Category } from "./index";
+import { Search, Card, Category, HotAds } from "./index";
 
 function App() {
+
+  const adsData = {
+    bannerImg: 'https://admin-b2b2c.pickmall.cn/img/decorate1.ce875c0e.png',
+    adsList: [
+      { img: 'https://admin-b2b2c.pickmall.cn/img/1.ce23a19e.jpg' },
+      { img: 'https://admin-b2b2c.pickmall.cn/img/1.ce23a19e.jpg' },
+      { img: 'https://admin-b2b2c.pickmall.cn/img/1.ce23a19e.jpg' },
+      { img: 'https://admin-b2b2c.pickmall.cn/img/1.ce23a19e.jpg' },
+      { img: 'https://admin-b2b2c.pickmall.cn/img/1.ce23a19e.jpg' },
+    ],
+  };
   return (
     <>
+      <HotAds bannerImg={adsData.bannerImg} adsList={adsData.adsList} />
       <Search />
       <Category />
       <Card.Card3
