@@ -81,11 +81,10 @@ pnpm run build
       const newGoodses = [];
       console.log(newGoodses);
       console.log(Newbee);
-      render(document.getElementById('card3'),Card.Card3,{list:newGoodses,title:"yueyue"})
+      render(document.getElementById('Login'),Card.Card3,{list:newGoodses,title:"yueyue"})
     </script>
   </head>
   <body>
-    <div id="Search"></div>
     <div id="Login"></div>
   </body>
 </html>
