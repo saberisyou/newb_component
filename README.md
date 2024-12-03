@@ -76,9 +76,9 @@ pnpm run build
     <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/newb_component/dist/newb_component.css" />
     <!-- 引入您的组件库 -->
-    <script type="module">
+    <script type="module" th:inline="javascript">
       import Newbee,{Card,render} from "https://unpkg.com/newb_component@latest/dist/my-react-components.es.js";
-      const newGoodses = [];
+      const newGoodses = [[${newGoodses}]];
       console.log(newGoodses);
       console.log(Newbee);
       render(document.getElementById('Login'),Card.Card3,{list:newGoodses,title:"yueyue"})
