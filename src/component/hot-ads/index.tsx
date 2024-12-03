@@ -1,7 +1,8 @@
 import './styles.less';
 // 热门广告
 interface AdsItem {
-  img?: string;
+  id: string;
+  img: string;
 }
 interface HotAdsProps {
   bannerImg: string;
@@ -15,7 +16,7 @@ const HotAds = (props: HotAdsProps) => {
       <ul className='hot-ads-list'>
         {adsList.map((e: AdsItem) => {
           return (
-            <li className='hot-ads-list-item'>
+            <li className='hot-ads-list-item' key={e.id}>
               <img className='ads-img' src={e.img} />
             </li>
           );

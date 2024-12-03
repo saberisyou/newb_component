@@ -5,11 +5,11 @@ function App() {
   const adsData = {
     bannerImg: 'https://admin-b2b2c.pickmall.cn/img/decorate1.ce875c0e.png',
     adsList: [
-      { img: 'https://admin-b2b2c.pickmall.cn/img/1.ce23a19e.jpg' },
-      { img: 'https://admin-b2b2c.pickmall.cn/img/1.ce23a19e.jpg' },
-      { img: 'https://admin-b2b2c.pickmall.cn/img/1.ce23a19e.jpg' },
-      { img: 'https://admin-b2b2c.pickmall.cn/img/1.ce23a19e.jpg' },
-      { img: 'https://admin-b2b2c.pickmall.cn/img/1.ce23a19e.jpg' },
+      { id: 'ad1', img: 'https://admin-b2b2c.pickmall.cn/img/1.ce23a19e.jpg' },
+      { id: 'ad2', img: 'https://admin-b2b2c.pickmall.cn/img/1.ce23a19e.jpg' },
+      { id: 'ad3', img: 'https://admin-b2b2c.pickmall.cn/img/1.ce23a19e.jpg' },
+      { id: 'ad4', img: 'https://admin-b2b2c.pickmall.cn/img/1.ce23a19e.jpg' },
+      { id: 'ad5', img: 'https://admin-b2b2c.pickmall.cn/img/1.ce23a19e.jpg' },
     ],
   };
   return (
