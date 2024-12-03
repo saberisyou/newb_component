@@ -1,10 +1,10 @@
 // src/Search.tsx
 import React from "react";
-import "./styles.less";
+import styles from "./styles.module.less";
 
 export const Search: React.FC = (props: any) => {
   return (
-    <div>
+    <div className={styles.search}>
       {props.name}
       <input type="text" placeholder="Search..." className="Search" />
       <button>Search</button>

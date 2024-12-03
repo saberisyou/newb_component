@@ -1,8 +1,9 @@
-import { Card, Category } from "./index";
+import { Search, Card, Category } from "./index";
 
 function App() {
   return (
     <>
+      <Search />
       <Category />
       <Card.Card3
         title={"123"}
