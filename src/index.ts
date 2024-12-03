@@ -5,4 +5,4 @@ import Card from "./component/card";
 import Category from "./component/category/index.tsx";
 import { render } from "./render.ts";
 
-export { Search, Login, Card, Category, render };
+export default { Search, Login, Card, Category, render };
