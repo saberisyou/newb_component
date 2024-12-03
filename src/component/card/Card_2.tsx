@@ -15,7 +15,7 @@ interface Card3Props {
   title?: string;
 }
 
-const Card3 = (props: Card3Props) => {
+export const Card2 = (props: Card3Props) => {
   const { list,title } = props;
   return (
     <>
@@ -57,4 +57,3 @@ const Card3 = (props: Card3Props) => {
   );
 };
 
-export default Card3;

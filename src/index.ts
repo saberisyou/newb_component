@@ -1,8 +1,9 @@
 import "./index.css";
-import Search from "./component/search/Search.tsx";
-import Login from "./component/login/Login.tsx";
 import Card from "./component/card";
-import Category from "./component/category/index.tsx";
+import Category from "./component/category";
 import { render } from "./render.ts";
 
-export default { Search, Login, Card, Category, render };
+
+export { Card, Category, render };
+export default { Card, Category, render };
+console.log("NewBee", { Card, Category, render });
