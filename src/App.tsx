@@ -5,7 +5,9 @@ function App() {
   return (
     <>
       <Category />
-      <Card3 list={[
+      <Card3
+        title={"123"}
+        list={[
         {
           "goodsId": 11019,
           "goodsName": "CUSTARD CAKES",
