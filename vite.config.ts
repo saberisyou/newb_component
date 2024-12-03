@@ -1,8 +1,16 @@
 import { defineConfig } from "vite";
 import { viteExternalsPlugin } from "vite-plugin-externals";
+import Font from 'vite-plugin-font'
 
 export default defineConfig({
+  resolve: {
+    alias:{
+      '@':'/src'
+    }
+  },
   plugins: [
+    // reactRefresh(),
+    Font.vite(),
     viteExternalsPlugin(
       {
         react: "React", // 映射react的全局变量为React
@@ -14,6 +22,7 @@ export default defineConfig({
       },
     ),
   ],
+  assetsInclude: ['**/*.woff', '**/*.woff2', '**/*.ttf', '**/*.otf'], // 确保 Vite 处理这些文件
   define: {
     'process.env': {}, // 将 process.env 定义为空对象
   },

@@ -1,9 +1,10 @@
-import { Card3 } from "./index.ts";
+import {Card3, Category} from "./index.ts";
 
 function App() {
 
   return (
     <>
+      <Category />
       <Card3 list={[
         {
           "goodsId": 11019,
