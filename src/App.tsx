@@ -1,5 +1,4 @@
 import { Search, Card, Category, HotAds } from "./index";
-
 function App() {
 
   const adsData = {
@@ -16,6 +15,7 @@ function App() {
     <>
       <HotAds bannerImg={adsData.bannerImg} adsList={adsData.adsList} />
       <Search />
+      <Card.Card4 name={123}/>
       <Category />
       <Card.Card3
         title={"123"}
