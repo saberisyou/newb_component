@@ -1,4 +1,5 @@
 
-export const Card5 =  ()=>{
-    return <div className="song">curry</div>
+export const Card5 =  (props:any)=>{
+    const {name} = props;
+    return <div className="song">{name || 'stephen curry'}</div>
 } 

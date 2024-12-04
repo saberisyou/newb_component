@@ -15,7 +15,7 @@ function App() {
     <>
       <HotAds bannerImg={adsData.bannerImg} adsList={adsData.adsList} />
       <Search />
-      <Card.Card5/>
+      <Card.Card5 name={'丁俊晖'}/>
       <Card.Card4 name={123}/>
       <Category />
       <Card.Card3
