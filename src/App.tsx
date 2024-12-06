@@ -107,6 +107,7 @@ function App() {
         list={recommendGoodses}
         title={"Let’s Find Your"}
         subtitle={"Our Recommend"}
+        border
       />
 
       <Instagram.Instagram1 />

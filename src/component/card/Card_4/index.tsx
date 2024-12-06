@@ -20,12 +20,13 @@ interface Card4Props {
   title?: string;
   subtitle?: string;
   span?: number;
+  border?: boolean;
 }
 
 export const Card4 = (props: Card4Props) => {
-  const { list, title, subtitle, span = 6 } = props;
+  const { list, title, subtitle, span = 6, border } = props;
   return (
-    <>
+    <div className={`${border ? styles.border : ""}`}>
       {subtitle && <div className={styles.subtitle}>{subtitle}</div>}
       {title && <div className={styles.title}>{title}</div>}
       <Row className={styles["card_list"]} gutter={[16, 16]}>
@@ -40,12 +41,12 @@ export const Card4 = (props: Card4Props) => {
             sellingPrice,
             rate = 4,
             tag,
-            cart
+            cart,
           } = e;
           return (
             <Col key={goodsId} span={span}>
               <div
-                className={styles["card"]}
+                className={`${styles.card} ${border ? styles.border : ""}`}
                 onClick={() => {
                   if (href) {
                     window.location.href = href;
@@ -83,6 +84,6 @@ export const Card4 = (props: Card4Props) => {
           );
         })}
       </Row>
-    </>
+    </div>
   );
 };
