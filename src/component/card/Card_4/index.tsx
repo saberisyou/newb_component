@@ -11,6 +11,7 @@ interface GoodsType {
   goodsName?: string;
   href?: string;
   discount?: string;
+  rate?: number;
 }
 
 interface Card4Props {
@@ -36,6 +37,7 @@ export const Card4 = (props: Card4Props) => {
             goodsIntro,
             discount,
             sellingPrice,
+            rate = 4,
             tag,
           } = e;
           return (
@@ -59,13 +61,14 @@ export const Card4 = (props: Card4Props) => {
                 <Space direction="vertical" className={styles["body"]}>
                   <p className={styles["intro"]}>{goodsIntro}</p>
                   <p className={styles["name"]}>{goodsName}</p>
-                  <Rate disabled defaultValue={4} />
-                  <p className={styles["discount"]}>{discount}</p>
+                  <Rate disabled defaultValue={rate} />
                   <p className={styles["item_price"]}>
                     ₱{sellingPrice.toLocaleString()}.00
-                    <span className={styles["item_price_sub"]}>
-                      ₱{sellingPrice.toLocaleString()}.00
-                    </span>
+                    {discount && (
+                      <span className={styles["discount"]}>
+                        ₱{discount.toLocaleString()}.00
+                      </span>
+                    )}
                   </p>
 
                   <div className={styles["cart"]}>
