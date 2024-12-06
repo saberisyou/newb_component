@@ -3,7 +3,7 @@ import { Col, Rate, Row, Space, Tag } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 
 interface GoodsType {
-  sellingPrice?: number;
+  sellingPrice: number;
   goodsId?: number;
   goodsIntro?: string;
   goodsCoverImg?: string;
@@ -50,9 +50,9 @@ export const Card4 = (props: Card4Props) => {
               >
                 <div className={styles["img_box"]}>
                   <img src={goodsCoverImg} alt={goodsName} />
-                  {e.tag && (
+                  {tag && (
                     <Tag className={styles["tag"]} color="#4376fb">
-                      {e.tag}
+                      {tag}
                     </Tag>
                   )}
                 </div>
