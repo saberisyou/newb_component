@@ -12,6 +12,7 @@ interface GoodsType {
   href?: string;
   discount?: string;
   rate?: number;
+  cart?: () => void;
 }
 
 interface Card4Props {
@@ -39,6 +40,7 @@ export const Card4 = (props: Card4Props) => {
             sellingPrice,
             rate = 4,
             tag,
+            cart
           } = e;
           return (
             <Col key={goodsId} span={span}>
@@ -70,10 +72,11 @@ export const Card4 = (props: Card4Props) => {
                       </span>
                     )}
                   </p>
-
-                  <div className={styles["cart"]}>
-                    <ShoppingCartOutlined /> Add To Cart
-                  </div>
+                  {cart && (
+                    <div className={styles["cart"]} onClick={cart}>
+                      <ShoppingCartOutlined /> Add To Cart
+                    </div>
+                  )}
                 </Space>
               </div>
             </Col>
