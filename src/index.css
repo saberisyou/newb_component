@@ -1,33 +1,3 @@
-@font-face {
-  font-family: "Pacifico"; /* 自定义字体名称 */
-  src: url("@/assets/fonts/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2") format("woff2"),
-    /* 适合现代浏览器 */
-      url("@/assets/fonts/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2") format("woff"); /* 适合旧版浏览器 */
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Varela Round"; /* 自定义字体名称 */
-  src: url("@/assets/fonts/w8gdH283Tvk__Lua32TysjIfp8uPLdshZg.woff2")
-      format("woff2"),
-    /* 适合现代浏览器 */
-      url("@/assets/fonts/w8gdH283Tvk__Lua32TysjIfp8uPLdshZg.woff2")
-      format("woff"); /* 适合旧版浏览器 */
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Libre Baskerville"; /* 自定义字体名称 */
-  src: url("@/assets/fonts/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNZaxMaC82U.woff2")
-      format("woff2"),
-    /* 适合现代浏览器 */
-      url("@/assets/fonts/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNZaxMaC82U.woff2")
-      format("woff"); /* 适合旧版浏览器 */
-  font-weight: normal;
-  font-style: normal;
-}
-
-
 *{
     margin: 0;
     padding: 0;
