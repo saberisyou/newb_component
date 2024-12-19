@@ -1,4 +1,4 @@
-import { Search, Card, Category, HotAds, Instagram } from "./index";
+import { Search, Card, HotAds, Instagram } from "./index";
 import { Card4 } from "./component/card/Card_4";
 import {Category4} from "./component/category/Category4";
 
