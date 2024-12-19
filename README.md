@@ -16,7 +16,7 @@ Currently, two official plugins are available:
 ### 在src/component中开发组件
 
 ```js
-// src/Search.tsx
+// src/Search.tsx 
 import React from "react";
 import "./styles.less";
 
