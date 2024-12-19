@@ -1,6 +1,7 @@
 import { Search, Card, Category, HotAds, Instagram } from "./index";
 import { Card4 } from "./component/card/Card_4";
-import {Category4} from "./component/category";
+import {Category4} from "./component/category/Category4";
+
 
 function App() {
 
@@ -416,7 +417,6 @@ function App() {
       <Search />
       <Card.Card5 name={"丁俊晖"} />
 
-      <Category />
       <Card.Card3
         title={"123"}
         list={[

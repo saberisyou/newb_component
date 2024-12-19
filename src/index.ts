@@ -7,5 +7,5 @@ import HotAds from "./component/hot-ads";
 import Instagram from "./component/instagram";
 import { render } from "./render.ts";
 
-export { render, Card, Category, Search, Login, HotAds,Instagram };
-export default { render, Card, Category, Search, Login, HotAds,Instagram };
+export { render, Card, Category, Search, Login, HotAds, Instagram };
+export default { render, Card, Category, Search, Login, HotAds, Instagram };
