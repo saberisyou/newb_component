@@ -8,7 +8,7 @@ import { useState } from "react";
 import { Dropdown, Input } from "antd";
 
 interface HeadNavProps {
-  logo: string;
+  logo?: string;
   userName?: string;
   cart?: number;
 }
