@@ -7,7 +7,13 @@ import styles from "./styles.module.less";
 import { useState } from "react";
 import { Dropdown, Input } from "antd";
 
-export const HeadNav = (props) => {
+interface HeadNavProps {
+  logo: string;
+  userName?: string;
+  cart?: number;
+}
+
+export const HeadNav = (props: HeadNavProps) => {
   const { logo, userName, cart } = props;
   const [keywords, setKeywords] = useState("");
 
@@ -63,9 +69,12 @@ export const HeadNav = (props) => {
           </Dropdown>
           {userName && <DownOutlined />}
         </div>
-        <div className={styles["icon-items"]} onClick={()=>{
-          window.location.href = `/shop-cart`
-        }}>
+        <div
+          className={styles["icon-items"]}
+          onClick={() => {
+            window.location.href = `/shop-cart`;
+          }}
+        >
           <ShoppingCartOutlined className={styles["icon"]} />
           <div className={styles["content"]}>
             <h4>Cart {cart && `(${cart})`}</h4>
