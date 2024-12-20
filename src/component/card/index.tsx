@@ -4,4 +4,5 @@ import { Card3 } from "./Card_3";
 import { Card5 } from "./Card_5";
 import { Card4 } from "./Card_4";
 
+export { Card1, Card2, Card3, Card4, Card5 };
 export default { Card1, Card2, Card3, Card4, Card5 };

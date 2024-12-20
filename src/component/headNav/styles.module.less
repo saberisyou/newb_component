@@ -1,0 +1,91 @@
+.header-main {
+  display: flex;
+  border-bottom: 1px solid rgba(213, 213, 213, 0.5);
+  background: #fff;
+  gap: 100px;
+  padding: 10px 20px;
+  font-family: "Kanit", sans-serif;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.icon-items {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  &:hover {
+    color: #4376fb;
+    .icon{
+      color: #000;
+    }
+  }
+  .content {
+    h4 {
+      font-size: 16px;
+      font-family: "Jost", sans-serif;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+}
+.logo {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  img{
+    height: 100%;
+  }
+}
+.icon {
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  border-radius: 50%;
+  border: 1px solid #d5d5d5;
+  display: inline-block;
+  text-align: center;
+  font-size: 22px;
+}
+
+.input-area {
+  position: relative;
+  width: 370px;
+  input {
+    outline: none;
+    border: none;
+    background-color: #f5f5f5;
+    padding: 12px 16px;
+    width: 100%;
+    border-radius: 0px 8px 8px 0px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 28px;
+    font-family: "Kanit", sans-serif;
+    &:hover {
+      background-color: #f5f5f5;
+      outline: none;
+    }
+    &:focus {
+      background-color: #f5f5f5;
+      box-shadow: none;
+    }
+  }
+  .cmn-btn {
+    outline: none;
+    border: none;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    color: var(--header);
+    background-color: #ffbf25;
+    padding: 13px 16px;
+    line-height: 1;
+    font-size: 14px;
+    border-radius: 8px;
+    font-family: "Kanit", sans-serif;
+  }
+}
