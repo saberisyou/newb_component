@@ -60,26 +60,53 @@ export const HeadNav = (props: HeadNavProps) => {
         </button>
       </div>
       <div className={styles["header-right"]}>
-        <div className={styles["icon-items"]}>
+        <div
+          className={styles["icon-items"]}
+          onClick={() => {
+            window.location.href = `/login`;
+          }}
+        >
           <UserOutlined className={styles["icon"]} />
           <Dropdown menu={{ items: userName ? items : [] }}>
             <div className={styles["content"]}>
-              <h4>{userName ? userName : "Account"}</h4>
+              {userName ? (
+                <h4>{userName}</h4>
+              ) : (
+                <>
+                  <h4>Login</h4>
+                  <p>Hello, Login</p>
+                </>
+              )}
             </div>
           </Dropdown>
           {userName && <DownOutlined />}
         </div>
-        <div
-          className={styles["icon-items"]}
-          onClick={() => {
-            window.location.href = `/shop-cart`;
-          }}
-        >
-          <ShoppingCartOutlined className={styles["icon"]} />
-          <div className={styles["content"]}>
-            <h4>Cart {cart && `(${cart})`}</h4>
+        {userName ? (
+          <div
+            className={styles["icon-items"]}
+            onClick={() => {
+              window.location.href = `/shop-cart`;
+            }}
+          >
+            <ShoppingCartOutlined className={styles["icon"]} />
+            <div className={styles["content"]}>
+              <h4>Cart {cart && `(${cart})`}</h4>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div
+            className={styles["icon-items"]}
+            onClick={() => {
+              window.location.href = `/register`;
+            }}
+          >
+            <UserOutlined className={styles["icon"]} />
+            <div className={styles["content"]}>
+              <h4>Register</h4>
+              <p>Please Register</p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
