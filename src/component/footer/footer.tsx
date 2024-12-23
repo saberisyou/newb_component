@@ -1,11 +1,6 @@
 import styles from "./styles.module.less";
-interface HeadNavProps {
-  logo?: string;
-  userName?: string;
-  cart?: number;
-}
 
-export const Footer = (props: HeadNavProps) => {
+export const Footer = () => {
   return (
     <div className={styles["footer-main"]}>
       <div className={styles["info-text"]}>
