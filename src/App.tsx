@@ -8,6 +8,7 @@ import Instagram from "./routes/Instagram.tsx";
 import Search from "./routes/Search.tsx";
 import HeadNav from "./routes/HeadNav.tsx";
 import HotAds from "./routes/HotAds.tsx";
+import Footer from "./routes/Footer.tsx";
 
 const items = [
   {
@@ -29,6 +30,10 @@ const items = [
   {
     key: "instagram",
     label: "Instagram",
+  },
+  {
+    key: "footer",
+    label: "footer",
   },
 ];
 
@@ -75,7 +80,8 @@ const App: React.FC = () => {
             <Route path="/hotAds" element={<HotAds />} />
             <Route path="/category" element={<Category />} />
             <Route path="/instagram" element={<Instagram />} />
-            <Route path="/Search" element={<Search />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/footer" element={<Footer />} />
           </Routes>
         </Content>
       </Layout>
