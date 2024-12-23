@@ -63,7 +63,9 @@ export const HeadNav = (props: HeadNavProps) => {
         <div
           className={styles["icon-items"]}
           onClick={() => {
-            window.location.href = `/login`;
+            if (!userName) {
+              window.location.href = `/login`;
+            }
           }}
         >
           <UserOutlined className={styles["icon"]} />
