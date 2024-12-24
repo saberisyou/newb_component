@@ -29,29 +29,22 @@
         display: flex;
         gap: 4px;
       }
-      .minus {
+      .minus,.qty,.plus {
         width: 50px;
         height: 40px;
+        line-height: 36px;
         text-align: center;
+        font-size: 24px;
         background-color: transparent;
         border: 1px solid #d5d5d5;
         color: #000;
+        border-radius: 2px!important;
       }
-      .qty {
-        width: 50px;
-        height: 40px;
-        text-align: center;
-        background-color: transparent;
-        border: 1px solid #d5d5d5;
-        color: #000;
+      .qty{
+        font-size: 16px;
       }
-      .plus {
-        width: 50px;
-        height: 40px;
+      .ant-input-number-input{
         text-align: center;
-        background-color: transparent;
-        border: 1px solid #d5d5d5;
-        color: #000;
       }
     }
     .star {
@@ -70,6 +63,11 @@
       font-size: 40px;
       margin-bottom: 16px;
       color: #000;
+      span{
+        font-size: 20px;
+        color: #555;
+        text-decoration: line-through;
+      }
     }
     p {
       font-size: 18px;

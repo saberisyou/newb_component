@@ -1,9 +1,11 @@
 import "./styles.less";
-import { Rate } from "antd";
+import {Input, InputNumber, Rate} from "antd";
+import React from "react";
 
 interface CartProps {
   title: string;
   price: string;
+  disPrice: string;
   rate?: number;
   customerReview?: number;
   description?: string;
@@ -21,12 +23,16 @@ export const Cart = (props: CartProps) => {
     customerReview = 0,
     description,
     price,
+    disPrice,
     SKU,
     categories,
     tags = [],
     onAddToCart,
     onBuyNow,
   } = props;
+
+  const [len, setLen] = React.useState(0);
+
   return (
     <div className="shop-details-wrapper">
       <div className="product-details-content">
@@ -41,15 +47,21 @@ export const Cart = (props: CartProps) => {
         </div>
         <p className="mb-3">{description}</p>
         <div className="price-list">
-          <h3>{price}</h3>
+          <h3>
+            {price} <span>{disPrice}</span>
+          </h3>
         </div>
         <div className="cart-wrp">
           <div className="cart-quantity">
-            <form id="myform" method="POST" className="quantity" action="#">
-              <input type="button" value="-" className="qtyminus minus" />
-              <input type="text" name="quantity" value="0" className="qty" />
-              <input type="button" value="+" className="qtyplus plus" />
-            </form>
+            <div className="quantity">
+              <div className="qtyminus minus" onClick={() => setLen(len - 1)}>
+                -
+              </div>
+              <InputNumber controls={false}  name="quantity" value={len} className="qty" onChange={(e)=>setLen(e)}/>
+              <div className="qtyplus plus" onClick={() => setLen(len + 1)}>
+                +
+              </div>
+            </div>
           </div>
         </div>
         <div className="shop-btn">
