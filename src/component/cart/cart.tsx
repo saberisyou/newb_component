@@ -34,6 +34,10 @@ export const Cart = (props: CartProps) => {
   const [len, setLen] = React.useState(0);
 
   return (
+    <div className={'cart'}>
+    <div className={'shop-thumb'}>
+      <img src="https://www.thethirdacsupply.com/upload/XACM3i.jpg" alt="" />
+    </div>
     <div className="shop-details-wrapper">
       <div className="product-details-content">
         <h2 className="pb-3">{title}</h2>
@@ -94,6 +98,7 @@ export const Cart = (props: CartProps) => {
           </h6>
         )}
       </div>
+    </div>
     </div>
   );
 };
