@@ -1,14 +1,14 @@
 import React from "react";
-import { Layout, Menu, theme } from "antd";
+import { Badge, Layout, Menu, Tag, theme } from "antd";
 import { Routes, Route, useNavigate } from "react-router-dom";
-const { Header, Content, Sider } = Layout;
+const { Header, Content, Sider, Footer } = Layout;
 import Card from "./routes/Card";
 import Category from "./routes/Category.tsx";
 import Instagram from "./routes/Instagram.tsx";
 import Search from "./routes/Search.tsx";
 import HeadNav from "./routes/HeadNav.tsx";
 import HotAds from "./routes/HotAds.tsx";
-import Footer from "./routes/Footer.tsx";
+import AFooter from "./routes/Footer.tsx";
 import Cart from "./routes/Cart.tsx";
 
 const items = [
@@ -47,27 +47,37 @@ const App: React.FC = () => {
     token: { colorBgContainer },
   } = theme.useToken();
   const navigate = useNavigate();
+  console.log(navigate);
   return (
     <Layout>
       <Sider breakpoint="lg" collapsedWidth="0">
-        <div
-          className="demo-logo-vertical"
-          style={{
-            margin: "16px",
-            borderRadius: "6px",
-            color: "#fff",
-            fontSize: "30px",
-            textAlign: "center",
-            fontFamily: "Jost",
-            fontWeight: "bold",
-          }}
+        <Badge
+          offset={[18, 20]}
+          count={
+            <Tag  color="green">
+              Prod
+            </Tag>
+          }
         >
-          New Bee
-        </div>
+          <div
+            className="demo-logo-vertical"
+            style={{
+              margin: "16px",
+              borderRadius: "6px",
+              color: "#fff",
+              fontSize: "30px",
+              textAlign: "center",
+              fontFamily: "Jost",
+              fontWeight: "bold",
+            }}
+          >
+            New Bee
+          </div>
+        </Badge>
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={["card"]}
+          defaultSelectedKeys={[window.location.hash.substr(2)||'card']}
           items={items}
           onClick={(e) => {
             navigate(e.key);
@@ -75,7 +85,7 @@ const App: React.FC = () => {
         />
       </Sider>
       <Layout>
-        <Header style={{ padding: 0, background: colorBgContainer }} />
+        <Header style={{ padding: "0 20px", background: colorBgContainer }} />
         <Content
           style={{
             padding: "48px",
@@ -91,9 +101,14 @@ const App: React.FC = () => {
             <Route path="/category" element={<Category />} />
             <Route path="/instagram" element={<Instagram />} />
             <Route path="/search" element={<Search />} />
-            <Route path="/footer" element={<Footer />} />
+            <Route path="/footer" element={<AFooter />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>
+          <Footer style={{ textAlign: "center" }}>
+            <a href="https://beian.miit.gov.cn">
+              备案/许可证编号为：鄂ICP备2024084390号
+            </a>
+          </Footer>
         </Content>
       </Layout>
     </Layout>
