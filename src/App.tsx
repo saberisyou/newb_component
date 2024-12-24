@@ -13,12 +13,12 @@ import Cart from "./routes/Cart.tsx";
 
 const items = [
   {
-    key: "headNav",
-    label: "HeadNav",
-  },
-  {
     key: "card",
     label: "Card",
+  },
+  {
+    key: "headNav",
+    label: "HeadNav",
   },
   {
     key: "category",
@@ -53,16 +53,21 @@ const App: React.FC = () => {
         <div
           className="demo-logo-vertical"
           style={{
-            height: "32px",
             margin: "16px",
-            background: "rgba(255, 255, 255, .2)",
             borderRadius: "6px",
+            color: "#fff",
+            fontSize: "30px",
+            textAlign: "center",
+            fontFamily: "Jost",
+            fontWeight: "bold",
           }}
-        />
+        >
+          New Bee
+        </div>
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={["HeadNav"]}
+          defaultSelectedKeys={["card"]}
           items={items}
           onClick={(e) => {
             navigate(e.key);
