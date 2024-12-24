@@ -133,7 +133,7 @@ const Card = () => {
       <Title>Card</Title>
       <Card3 title={"123"} list={card3Data} />
       <Card4
-        span={6}
+        span={5}
         list={recommendGoodses}
         title={"Exclusive Products"}
         subtitle={"Our Products"}

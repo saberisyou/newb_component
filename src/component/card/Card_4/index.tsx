@@ -44,7 +44,11 @@ export const Card4 = (props: Card4Props) => {
             cart,
           } = e;
           return (
-            <Col key={goodsId} span={span}>
+            <Col
+              key={goodsId}
+              span={span}
+              className={span === 5 ? styles["card_col"] : ""}
+            >
               <div
                 className={`${styles.card} ${border ? styles.border : ""}`}
                 onClick={() => {
