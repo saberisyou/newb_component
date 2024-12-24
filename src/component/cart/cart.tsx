@@ -7,10 +7,10 @@ interface CartProps {
   rate?: number;
   customerReview?: number;
   description?: string;
-  onAddToCart: () => void;
-  onBuyNow: () => void;
+  onAddToCart?: () => void;
+  onBuyNow?: () => void;
   SKU?: string;
-  tags: string[];
+  tags?: string[];
   categories?: string;
 }
 
