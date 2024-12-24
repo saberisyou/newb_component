@@ -1,5 +1,5 @@
 import "./styles.less";
-import { InputNumber, Rate} from "antd";
+import { InputNumber, Rate } from "antd";
 import React from "react";
 
 interface CartProps {
@@ -10,8 +10,8 @@ interface CartProps {
   rate?: number;
   customerReview?: number;
   description?: string;
-  onAddToCart?: () => void;
-  onBuyNow?: () => void;
+  onAddToCart?: (e: number) => void;
+  onBuyNow?: (e: number) => void;
   SKU?: string;
   tags?: string[];
   categories?: string;
@@ -33,15 +33,12 @@ export const Cart = (props: CartProps) => {
     onBuyNow,
   } = props;
 
-  const [len, setLen] = React.useState(0);
+  const [len, setLen] = React.useState(1);
 
   return (
     <div className={"cart"}>
       <div className={"shop-thumb"}>
-        <img
-          src={productImg}
-          alt=""
-        />
+        <img src={productImg} alt="" />
       </div>
       <div className="shop-details-wrapper">
         <div className="product-details-content">
@@ -63,7 +60,16 @@ export const Cart = (props: CartProps) => {
           <div className="cart-wrp">
             <div className="cart-quantity">
               <div className="quantity">
-                <div className="qtyminus minus" onClick={() => setLen(len - 1)}>
+                <div
+                  className="qtyminus minus"
+                  onClick={() => {
+                    let num = len - 1;
+                    if (num < 1) {
+                      num = 1;
+                    }
+                    setLen(num);
+                  }}
+                >
                   -
                 </div>
                 <InputNumber
@@ -71,7 +77,13 @@ export const Cart = (props: CartProps) => {
                   name="quantity"
                   value={len}
                   className="qty"
-                  onChange={(e) => setLen(e || 0)}
+                  onChange={(e) => {
+                    if (!e || e < 1) {
+                      setLen(1);
+                    } else {
+                      setLen(e || 0);
+                    }
+                  }}
                 />
                 <div className="qtyplus plus" onClick={() => setLen(len + 1)}>
                   +
@@ -80,10 +92,10 @@ export const Cart = (props: CartProps) => {
             </div>
           </div>
           <div className="shop-btn">
-            <a onClick={onAddToCart} className="theme-btn">
+            <a onClick={() => onAddToCart?.(len)} className="theme-btn">
               <span> Add to cart</span>
             </a>
-            <a onClick={onBuyNow} className="theme-btn">
+            <a onClick={() => onBuyNow?.(len)} className="theme-btn">
               <span> Buy now</span>
             </a>
           </div>
