@@ -1,7 +1,7 @@
 {
   "name": "newb_component",
   "private": false,
-  "version": "0.3.74",
+  "version": "0.3.75",
   "type": "module",
   "scripts": {
     "dev": "vite",
