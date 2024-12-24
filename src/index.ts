@@ -8,6 +8,7 @@ import Instagram from "./component/instagram";
 import HeadNav from "./component/headNav";
 import Footer from "./component/footer";
 import { render } from "./render.ts";
+import { Cart } from "./component/cart";
 
 export {
   render,
@@ -19,6 +20,7 @@ export {
   Login,
   HotAds,
   Instagram,
+  Cart
 };
 export default {
   render,
@@ -30,4 +32,5 @@ export default {
   Login,
   HotAds,
   Instagram,
+  Cart
 };

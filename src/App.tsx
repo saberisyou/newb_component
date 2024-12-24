@@ -9,6 +9,7 @@ import Search from "./routes/Search.tsx";
 import HeadNav from "./routes/HeadNav.tsx";
 import HotAds from "./routes/HotAds.tsx";
 import Footer from "./routes/Footer.tsx";
+import Cart from "./routes/Cart.tsx";
 
 const items = [
   {
@@ -34,6 +35,10 @@ const items = [
   {
     key: "footer",
     label: "footer",
+  },
+  {
+    key: "cart",
+    label: "cart",
   },
 ];
 
@@ -82,6 +87,7 @@ const App: React.FC = () => {
             <Route path="/instagram" element={<Instagram />} />
             <Route path="/search" element={<Search />} />
             <Route path="/footer" element={<Footer />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </Content>
       </Layout>
