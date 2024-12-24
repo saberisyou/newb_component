@@ -47,12 +47,11 @@ const App: React.FC = () => {
     token: { colorBgContainer },
   } = theme.useToken();
   const navigate = useNavigate();
-  console.log(navigate);
   return (
     <Layout>
       <Sider breakpoint="lg" collapsedWidth="0">
         <Badge
-          offset={[18, 20]}
+          offset={[0, 24]}
           count={
             <Tag  color="green">
               Prod
@@ -62,7 +61,7 @@ const App: React.FC = () => {
           <div
             className="demo-logo-vertical"
             style={{
-              margin: "16px",
+              margin: "32px 16px 32px 30px",
               borderRadius: "6px",
               color: "#fff",
               fontSize: "30px",
