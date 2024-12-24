@@ -1,5 +1,5 @@
 import "./styles.less";
-import {Input, InputNumber, Rate} from "antd";
+import { InputNumber, Rate} from "antd";
 import React from "react";
 
 interface CartProps {
@@ -61,7 +61,7 @@ export const Cart = (props: CartProps) => {
               <div className="qtyminus minus" onClick={() => setLen(len - 1)}>
                 -
               </div>
-              <InputNumber controls={false}  name="quantity" value={len} className="qty" onChange={(e)=>setLen(e)}/>
+              <InputNumber controls={false}  name="quantity" value={len} className="qty" onChange={(e)=>setLen(e||0)}/>
               <div className="qtyplus plus" onClick={() => setLen(len + 1)}>
                 +
               </div>
