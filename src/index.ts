@@ -8,7 +8,7 @@ import Instagram from "./component/instagram";
 import HeadNav from "./component/headNav";
 import Footer from "./component/footer";
 import { render } from "./render.ts";
-import { Cart } from "./component/cart";
+import Cart from "./component/cart";
 
 export {
   render,
