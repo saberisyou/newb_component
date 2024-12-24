@@ -5,7 +5,7 @@ const App = () => {
   return (
     <>
       <Title>Cart</Title>
-      <Cart title={'Carttitle'} price={'$76.89'} disPrice={'$76.89'}/>
+      <Cart title={'Carttitle'} price={'$76.89'} disPrice={'$76.89'} productImg={''}/>
     </>
   );
 };
