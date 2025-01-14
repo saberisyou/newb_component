@@ -27,12 +27,11 @@ export const Footer = () => {
             </div>
             <ul className={styles["contact-list"]}>
               <li>
-                P2 Blk 11 lot 23, Pamayanang Maliksi Pasong Kawayan 2 Gen. Trias
-                cavite
+              236 JADE GARDEN HONORIO LOPEZ BLVD. BARANGAY 147 ZONE 13 1012 TONDO I/I NCR, CITY OF MANILA, FIRST DISTRICT PHILIPPINES
               </li>
               <li>
-                <a href="mailto:thethirdcontrairconditioning@gmail.com">
-                  thethirdcontrairconditioning@gmail.com
+                <a href="mailto:asuncionclifford991@hotmail.com">
+                  asuncionclifford991@hotmail.com
                 </a>
               </li>
             </ul>
