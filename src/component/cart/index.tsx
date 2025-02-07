@@ -1,3 +1,4 @@
 import { Cart } from "./cart";
-export  { Cart };
-export default { Cart };
+import { Cart2 } from "./cart2/cart2";
+export  { Cart,Cart2 };
+export default { Cart ,Cart2};

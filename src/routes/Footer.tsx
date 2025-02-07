@@ -1,11 +1,14 @@
 import { Typography } from "antd";
-import { Footer } from "../component/footer";
+import { Footer,Footer2 } from "../component/footer";
 const { Title } = Typography;
 const App = () => {
   return (
     <>
       <Title>Footer</Title>
       <Footer/>
+
+      <Title>Footer2</Title>
+      <Footer2/>
     </>
   );
 };

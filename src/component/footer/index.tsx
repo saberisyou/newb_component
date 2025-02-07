@@ -1,3 +1,4 @@
 import { Footer } from "./footer";
-export  { Footer };
-export default { Footer };
+import { Footer2 } from "./footer2/footer2.tsx";
+export  { Footer,Footer2 };
+export default { Footer,Footer2 };

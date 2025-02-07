@@ -1,5 +1,5 @@
-import { Card3, Card4, Card5 } from "../component/card";
-import { Typography } from "antd";
+import {Card1, Card2, Card3, Card4, Card5} from "../component/card";
+import { Space, Typography } from "antd";
 const { Title } = Typography;
 const card3Data = [
   {
@@ -130,16 +130,45 @@ const recommendGoodses = [
 const Card = () => {
   return (
     <>
-      <Title>Card</Title>
-      <Card3 title={"123"} list={card3Data} />
-      <Card4
-        span={5}
-        list={recommendGoodses}
-        title={"Exclusive Products"}
-        subtitle={"Our Products"}
-        border
-      />
-      <Card5 name={"丁俊晖"} />
+      <Space direction={"vertical"} style={{ marginBottom: 20 }}>
+        <Title>Card1</Title>
+        <Card1 list={card3Data} />
+      </Space>
+
+      <Space direction={"vertical"} style={{ marginBottom: 20 }}>
+        <Title>Card2</Title>
+        <Card2 list={card3Data} />
+      </Space>
+
+      <Space direction={"vertical"} style={{ marginBottom: 20 }}>
+        <Title>Card3</Title>
+        <Card3 list={card3Data} />
+      </Space>
+      <Space direction={"vertical"} style={{ marginBottom: 20 }}>
+        <Title>Card4</Title>
+        <Card4
+          span={5}
+          list={recommendGoodses}
+          title={"Exclusive Products"}
+          subtitle={"Our Products"}
+          border
+        />
+      </Space>
+      <Space direction={"vertical"} style={{ marginBottom: 20 }}>
+        <Title>Card5</Title>
+        <Card5
+          span={6}
+          list={recommendGoodses}
+          title={"Exclusive Products"}
+          subtitle={"Our Products"}
+        />
+        <Card5
+          span={6}
+          list={recommendGoodses.map(e=>({...e,cart:true}))}
+          title={"Exclusive Products"}
+          subtitle={"Our Products"}
+        />
+      </Space>
     </>
   );
 };
