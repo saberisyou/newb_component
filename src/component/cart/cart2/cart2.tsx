@@ -1,6 +1,7 @@
-import { InputNumber, Rate } from "antd";
+import {Divider, InputNumber, Rate, Space} from "antd";
 import React from "react";
 import styles from "./styles.module.less";
+import {ShoppingCartOutlined} from "@ant-design/icons";
 
 interface CartProps {
   title: string;
@@ -42,36 +43,30 @@ export const Cart2 = (props: CartProps) => {
       </div>
       <div className={styles["shop-details-wrapper"]}>
         <div className={styles["product-details-content"]}>
+
           <h2 className={styles["pb-3"]}>{title}</h2>
           <div className={`${styles["star"]} ${styles["pb-3"]}`}>
-            <Rate value={rate} style={{ color: "#4376fb" }} />
             {customerReview > 0 && (
               <span className={styles["customer"]}>
                 ({customerReview} Customer Review)
               </span>
             )}
           </div>
+          <Rate value={rate} style={{ color: "#ff4000" }} />
+          <span className={styles["customer"]}>
+            ({customerReview} Customer Review)
+          </span>
           <p className={styles["mb-3"]}>{description}</p>
           <div className={styles["price-list"]}>
             <h3>
               {price} <span className={styles["disPrice"]}>{disPrice}</span>
             </h3>
           </div>
+          <hr />
           <div className={styles["cart-wrp"]}>
             <div className={styles["cart-quantity"]}>
               <div className={styles["quantity"]}>
-                <div
-                  className={`${styles["qtyminus"]} ${styles["minus"]}`}
-                  onClick={() => {
-                    let num = len - 1;
-                    if (num < 1) {
-                      num = 1;
-                    }
-                    setLen(num);
-                  }}
-                >
-                  -
-                </div>
+                <label>Quantity</label>
                 <InputNumber
                   controls={false}
                   name="quantity"
@@ -85,11 +80,25 @@ export const Cart2 = (props: CartProps) => {
                     }
                   }}
                 />
-                <div
-                  className={`${styles["qtyplus"]} ${styles["plus"]}`}
-                  onClick={() => setLen(len + 1)}
-                >
-                  +
+                <div className={styles["quantityBox"]}>
+                  <div
+                    className={` ${styles["plus"]}`}
+                    onClick={() => setLen(len + 1)}
+                  >
+                    +
+                  </div>
+                  <div
+                    className={` ${styles["minus"]}`}
+                    onClick={() => {
+                      let num = len - 1;
+                      if (num < 1) {
+                        num = 1;
+                      }
+                      setLen(num);
+                    }}
+                  >
+                    -
+                  </div>
                 </div>
               </div>
             </div>
@@ -99,10 +108,16 @@ export const Cart2 = (props: CartProps) => {
               onClick={() => onAddToCart?.(len)}
               className={styles["theme-btn"]}
             >
-              <span>{"Add to cart"}</span>
+              <Space split={<Divider type="vertical" style={{ borderColor: '#fff' }}/>}>
+                <span>{"Add to cart"}</span>
+                <ShoppingCartOutlined />
+              </Space>
             </a>
             <a onClick={() => onBuyNow?.(len)} className={styles["theme-btn"]}>
-              <span>{"Buy now"}</span>
+              <Space split={<Divider type="vertical" style={{ borderColor: '#fff' }}/>}>
+                <ShoppingCartOutlined />
+                <span>{"Buy now"}</span>
+              </Space>
             </a>
           </div>
           {SKU && (
