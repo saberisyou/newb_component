@@ -137,7 +137,7 @@ const Card = () => {
 
       <Space direction={"vertical"} style={{ marginBottom: 20 }}>
         <Title>Card2</Title>
-        <Card2 list={card3Data} />
+        <Card2  />
       </Space>
 
       <Space direction={"vertical"} style={{ marginBottom: 20 }}>
@@ -164,7 +164,7 @@ const Card = () => {
         />
         <Card5
           span={6}
-          list={recommendGoodses.map(e=>({...e,cart:true}))}
+          list={recommendGoodses.map(e=>({...e,cart:()=>{}}))}
           title={"Exclusive Products"}
           subtitle={"Our Products"}
         />
