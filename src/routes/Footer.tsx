@@ -1,15 +1,32 @@
-import { Typography } from "antd";
-import { Footer,Footer2 } from "../component/footer";
-const { Title } = Typography;
+import {Card as ACard, Col, Row} from "antd";
+import FooterFc, { Footer, Footer2 } from "../component/footer";
+import Layout from "./layout.tsx";
 const App = () => {
   return (
-    <>
-      <Title>Footer</Title>
-      <Footer/>
-
-      <Title>Footer2</Title>
-      <Footer2/>
-    </>
+    <Layout menu={Object.keys(FooterFc)}>
+      <Row gutter={[16, 16]}>
+        <Col span={24}>
+          <ACard id="Footer" title="Footer">
+            <Footer />
+          </ACard>
+        </Col>
+        <Col span={24}>
+          <ACard id="Footer2" title="Footer2">
+            <Footer2 />
+          </ACard>
+        </Col>
+        <Col span={24}>
+          <ACard id="Footer3" title="Footer3">
+            <Footer2 />
+          </ACard>
+        </Col>
+        <Col span={24}>
+          <ACard id="Footer4" title="Footer4">
+            <Footer2 />
+          </ACard>
+        </Col>
+      </Row>
+    </Layout>
   );
 };
 export default App;

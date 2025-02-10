@@ -5,16 +5,32 @@ import {
 } from "@ant-design/icons";
 import styles from "./styles.module.less";
 import { useState } from "react";
-import { Dropdown, Input } from "antd";
+import { Cascader, Dropdown, Input } from "antd";
 
 interface HeadNavProps {
   logo?: string;
   userName?: string;
   cart?: number;
+  categoryList?: CategoryListType;
 }
 
+
+const transformCategoryList = (categoryList: CategoryListType) => {
+  return (categoryList || []).map(category => ({
+    value: category.categoryId.toString(),
+    label: category.categoryName,
+    children: category.secondLevelCategoryVOS?.map((secondLevel: any) => ({
+      value: secondLevel.categoryId.toString(),
+      label: secondLevel.categoryName,
+      children: secondLevel.thirdLevelCategoryVOS?.map((thirdLevel: any) => ({
+        value: thirdLevel.categoryId.toString(),
+        label: thirdLevel.categoryName
+      })) || undefined
+    })) || undefined
+  }));
+};
 export const HeadNav2 = (props: HeadNavProps) => {
-  const { logo, userName, cart } = props;
+  const { logo, userName, cart,categoryList } = props;
   const [keywords, setKeywords] = useState("");
 
   const items = [
@@ -43,7 +59,17 @@ export const HeadNav2 = (props: HeadNavProps) => {
           }}
         />
       </div>
+
       <div className={styles["input-area"]}>
+        <Cascader
+          className={styles["cmn-select"]}
+          options={transformCategoryList(categoryList)}
+          placeholder="Select Category"
+          onChange={(value) => {
+            window.location.href = `/search?categoryId=${value[0]}`;
+          }
+          }
+        />
         <Input
           placeholder="Search for products..."
           value={keywords}
@@ -58,7 +84,7 @@ export const HeadNav2 = (props: HeadNavProps) => {
           Search
         </button>
       </div>
-      <div style={{flex: 1}}></div>
+      <div style={{ flex: 1 }}></div>
       <div className={styles["header-right"]}>
         <div
           className={styles["icon-items"]}
@@ -68,8 +94,8 @@ export const HeadNav2 = (props: HeadNavProps) => {
             }
           }}
         >
-          <UserOutlined className={styles["icon"]}/>
-          <Dropdown menu={{items: userName ? items : []}}>
+          <UserOutlined className={styles["icon"]} />
+          <Dropdown menu={{ items: userName ? items : [] }}>
             <div className={styles["content"]}>
               {userName ? (
                 <h4>{userName}</h4>
@@ -81,7 +107,7 @@ export const HeadNav2 = (props: HeadNavProps) => {
               )}
             </div>
           </Dropdown>
-          {userName && <DownOutlined/>}
+          {userName && <DownOutlined />}
         </div>
         {userName ? (
           <div
@@ -90,7 +116,7 @@ export const HeadNav2 = (props: HeadNavProps) => {
               window.location.href = `/shop-cart`;
             }}
           >
-            <ShoppingCartOutlined className={styles["icon"]}/>
+            <ShoppingCartOutlined className={styles["icon"]} />
             <div className={styles["content"]}>
               <h4>Cart {cart && `(${cart})`}</h4>
             </div>
@@ -102,7 +128,7 @@ export const HeadNav2 = (props: HeadNavProps) => {
               window.location.href = `/register`;
             }}
           >
-            <UserOutlined className={styles["icon"]}/>
+            <UserOutlined className={styles["icon"]} />
             <div className={styles["content"]}>
               <h4>Register</h4>
               <p>Please Register</p>

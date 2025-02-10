@@ -3,23 +3,24 @@ import { viteExternalsPlugin } from "vite-plugin-externals";
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
-  console.log(env);
-  let plugins = [      viteExternalsPlugin(
-    {
-      react: "React", // 映射react的全局变量为React
-      "react-dom": "ReactDOM",
-      "react-dom/client": "ReactDOM",
-    },
-    {
-      disableInServe: true,
-    }
-  )];
-  let build:any = {
+  let plugins = [
+    viteExternalsPlugin(
+      {
+        react: "React", // 映射react的全局变量为React
+        "react-dom": "ReactDOM",
+        "react-dom/client": "ReactDOM",
+      },
+      {
+        disableInServe: true,
+      }
+    ),
+  ];
+  let build: any = {
     outDir: env.VITE_OUTPUT_DIR || "dist",
     lib: {
       entry: "./src/index.ts",
       name: "MyReactComponents",
-      fileName: (format:string) => `my-react-components.${format}.js`,
+      fileName: (format: string) => `my-react-components.${format}.js`,
       formats: ["es", "umd"], // 选择输出格式
     },
     rollupOptions: {
@@ -30,9 +31,8 @@ export default defineConfig(({ mode }) => {
     build = {
       outDir: env.VITE_OUTPUT_DIR || "dist",
     };
-    plugins=[]
+    plugins = [];
   }
-
 
   return {
     resolve: {

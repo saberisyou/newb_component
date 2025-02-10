@@ -1,6 +1,6 @@
-import { Typography } from "antd";
-import {Category4} from "../component/category";
-const { Title } = Typography;
+import { Card as ACard, Col, Row } from "antd";
+import Layout from "./layout.tsx";
+import CategoryFc,{Category, Category4} from "../component/category";
 const categoryList = [
   {
     categoryId: 10001,
@@ -300,10 +300,20 @@ const categoryList = [
 
 const App = () => {
   return (
-      <>
-      <Title>Category</Title>
-      <Category4 list={categoryList} />
-    </>
+    <Layout menu={Object.keys(CategoryFc)}>
+      <Row gutter={[16, 16]}>
+        <Col span={24}>
+          <ACard id="Category" title="Category">
+            <Category  />
+          </ACard>
+        </Col>
+        <Col span={24}>
+          <ACard id="Category4" title="Category4">
+            <Category4 list={categoryList} />
+          </ACard>
+        </Col>
+      </Row>
+    </Layout>
   );
 };
 export default App;

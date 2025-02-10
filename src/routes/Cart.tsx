@@ -1,29 +1,54 @@
-import { Typography } from "antd";
-import {Cart, Cart2} from "../component/cart";
-const { Title } = Typography;
+import {Card as ACard, Col, Row} from "antd";
+import CartFc,{Cart, Cart2} from "../component/cart";
+import Layout from "./layout.tsx";
 const App = () => {
   return (
-    <>
-      <div>
-        <Title>Cart</Title>
-        <Cart
-          title={"Carttitle"}
-          price={"$76.89"}
-          disPrice={"$76.89"}
-          productImg={""}
-        />
-      </div>
+    <Layout menu={Object.keys(CartFc)}>
+      <Row gutter={[16,16]}>
+        <Col span={24}>
+          <ACard id="Cart" title="Cart">
+            <Cart
+              title={"Carttitle"}
+              price={"$76.89"}
+              disPrice={"$76.89"}
+              productImg={'https://www.thethirdacsupply.com/upload/XACWT15R.jpg'}
+            />
+          </ACard>
+        </Col>
+        <Col span={24}>
+          <ACard id="Cart2" title="Cart2">
+            <Cart2
+              title={"Carttitle"}
+              price={"$76.89"}
+              disPrice={"$76.89"}
+              productImg={'https://www.thethirdacsupply.com/upload/XACWT15R.jpg'}
+            />
+          </ACard>
+        </Col>
 
-      <div>
-        <Title>Cart2</Title>
-        <Cart2
-          title={"Carttitle"}
-          price={"$76.89"}
-          disPrice={"$76.89"}
-          productImg={'https://www.thethirdacsupply.com/upload/XACWT15R.jpg'}
-        />
-      </div>
-    </>
+        <Col span={24}>
+          <ACard id="Cart3" title="Cart3">
+            <Cart2
+              title={"Carttitle"}
+              price={"$76.89"}
+              disPrice={"$76.89"}
+              productImg={'https://www.thethirdacsupply.com/upload/XACWT15R.jpg'}
+            />
+          </ACard>
+        </Col>
+
+        <Col span={24}>
+          <ACard id="Cart4" title="Cart4">
+            <Cart2
+              title={"Carttitle"}
+              price={"$76.89"}
+              disPrice={"$76.89"}
+              productImg={'https://www.thethirdacsupply.com/upload/XACWT15R.jpg'}
+            />
+          </ACard>
+        </Col>
+      </Row>
+    </Layout>
   );
 };
 export default App;

@@ -14,31 +14,35 @@ import Cart from "./routes/Cart.tsx";
 const items = [
   {
     key: "card",
-    label: "Card",
+    label: "Card - 卡片",
   },
   {
     key: "headNav",
-    label: "HeadNav",
+    label: "HeadNav - 头部导航",
   },
   {
     key: "category",
-    label: "Category",
+    label: "Category - 分类导航",
   },
   {
     key: "hotAds",
-    label: "HotAds",
+    label: "HotAds - 热点广告",
   },
   {
     key: "instagram",
-    label: "Instagram",
+    label: "Instagram - 热点广告",
   },
   {
     key: "footer",
-    label: "footer",
+    label: "footer - 底部",
   },
   {
     key: "cart",
-    label: "cart",
+    label: "cart - 购物车",
+  },
+  {
+    key: "search",
+    label: "search - 搜索",
   },
 ];
 
@@ -50,21 +54,14 @@ const App: React.FC = () => {
   return (
     <Layout>
       <Sider breakpoint="lg" collapsedWidth="0">
-        <Badge
-          offset={[0, 24]}
-          count={
-            <Tag  color="green">
-              Prod
-            </Tag>
-          }
-        >
+        <Badge offset={[0, 24]} count={<Tag color="green">Prod</Tag>}>
           <div
             className="demo-logo-vertical"
             style={{
               margin: "32px 16px 32px 30px",
               borderRadius: "6px",
-              color: "#fff",
               fontSize: "30px",
+              color: "#fff",
               textAlign: "center",
               fontFamily: "Jost",
               fontWeight: "bold",
@@ -76,7 +73,7 @@ const App: React.FC = () => {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={[window.location.hash.substr(2)||'card']}
+          defaultSelectedKeys={[window.location.hash.substr(2) || "card"]}
           items={items}
           onClick={(e) => {
             navigate(e.key);
@@ -84,8 +81,24 @@ const App: React.FC = () => {
         />
       </Sider>
       <Layout>
-        <Header style={{ padding: "0 20px", background: colorBgContainer }} />
+        <Header style={{ padding: "0 20px", background: colorBgContainer }}>
+          <Menu
+            mode="horizontal"
+            defaultSelectedKeys={["component"]}
+            items={[
+              {
+                label: "首页",
+                key: "index",
+              },
+              {
+                label: "组件",
+                key: "component",
+              },
+            ]}
+          />
+        </Header>
         <Content
+          id="content"
           style={{
             padding: "48px",
             height: "calc(100vh - 64px)",
