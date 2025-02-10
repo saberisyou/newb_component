@@ -11,8 +11,7 @@
     "preview": "vite preview",
     "deploy": "npm run build && npm version patch && npm publish",
     "changeset": "changeset",
-    "version": "changeset version && pnpm install",
-    "prepare": "husky install"
+    "version": "changeset version && pnpm install"
   },
   "main": "dist/my-react-components.umd.js",
   "module": "dist/my-react-components.es.js",

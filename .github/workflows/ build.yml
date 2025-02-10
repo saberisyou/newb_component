@@ -50,8 +50,18 @@ jobs:
       - name: 构建npm包
         run: pnpm run build
 
+      # 提交构建产物
+      - name: Commit build artifacts
+        run: |
+          git add .
+          git commit -m "chore: update build artifacts" || echo "No changes to commit"
+
       - name: 版本更新
-        run: pnpm version patch
+        run: |
+          git status
+          pnpm version patch --no-git-tag-version
+          git add .
+          git commit -m "chore: bump version"
         env:
           # GITHUB_TOKEN 是 CI 里自带的默认 token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
