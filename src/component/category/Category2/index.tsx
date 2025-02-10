@@ -18,17 +18,18 @@ interface CategoryItemType {
   secondLevelCategoryVOS: SecondLevelCategoryType[]; // secondLevelCategoryVOS 是 SecondLevelCategoryType 的数组
 }
 
-interface Category4Type {
+interface Category2Type {
   list: CategoryItemType[];
+  bannerList?: string[];
 }
 
-export const Category2 = (props: Category4Type) => {
-  const { list } = props;
+export const Category2 = (props: Category2Type) => {
+  const { list, bannerList } = props;
   const onChange = (currentSlide: number) => {
     console.log(currentSlide);
   };
   return (
-    <Flex  vertical>
+    <Flex vertical>
       <div className={styles["category"]}>
         <ul className={styles["details-list"]}>
           {list.map((e) => {
@@ -61,22 +62,16 @@ export const Category2 = (props: Category4Type) => {
         </ul>
       </div>
       <div className={styles["category-banner"]}>
-        <Carousel afterChange={onChange}  arrows autoplay>
-          <div>
-            <img
-              src={
-                "https://www.thethirdacsupply.com/upload/20241122_23112315.jpg"
-              }
-            />
-          </div>
-
-          <div>
-            <img
-              src={
-                "https://www.thethirdacsupply.com/upload/20241122_23102683.jpg"
-              }
-            />
-          </div>
+        <Carousel afterChange={onChange} arrows autoplay>
+          {bannerList ? (
+            bannerList.map((e) => {
+              return (
+                <div key={e}>
+                  <img src={e} />
+                </div>
+              );
+            })
+          ) : null}
         </Carousel>
       </div>
     </Flex>
