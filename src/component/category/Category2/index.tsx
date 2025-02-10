@@ -21,13 +21,7 @@ interface CategoryItemType {
 interface Category4Type {
   list: CategoryItemType[];
 }
-const contentStyle: React.CSSProperties = {
-  margin: 0,
-  height: "100%",
-  color: "#fff",
-  textAlign: "center",
-  background: "#364d79",
-};
+
 export const Category2 = (props: Category4Type) => {
   const { list } = props;
   const onChange = (currentSlide: number) => {

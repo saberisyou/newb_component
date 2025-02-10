@@ -302,11 +302,11 @@ const App = () => {
   return (
     <Layout menu={Object.keys(CategoryFc)}>
       <Row gutter={[16, 16]}>
-        {/*<Col span={24}>*/}
-        {/*  <ACard id="Category" title="Category">*/}
-        {/*    <Category  />*/}
-        {/*  </ACard>*/}
-        {/*</Col>*/}
+        <Col span={24}>
+          <ACard id="Category" title="Category">
+            <Category  />
+          </ACard>
+        </Col>
         <Col span={24}>
           <ACard id="Category2" title="Category2">
             <Category2 list={categoryList} />
