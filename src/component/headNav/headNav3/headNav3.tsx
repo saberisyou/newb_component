@@ -5,18 +5,32 @@ import {
 } from "@ant-design/icons";
 import styles from "./styles.module.less";
 import { useState } from "react";
-import { Dropdown, Input } from "antd";
+import { Cascader, Dropdown, Input } from "antd";
 
 interface HeadNavProps {
   logo?: string;
   userName?: string;
   cart?: number;
+  categoryList?: CategoryListType;
 }
 
 
-
-export const HeadNav2 = (props: HeadNavProps) => {
-  const { logo, userName, cart } = props;
+const transformCategoryList = (categoryList: CategoryListType) => {
+  return (categoryList || []).map(category => ({
+    value: category.categoryId.toString(),
+    label: category.categoryName,
+    children: category.secondLevelCategoryVOS?.map((secondLevel: any) => ({
+      value: secondLevel.categoryId.toString(),
+      label: secondLevel.categoryName,
+      children: secondLevel.thirdLevelCategoryVOS?.map((thirdLevel: any) => ({
+        value: thirdLevel.categoryId.toString(),
+        label: thirdLevel.categoryName
+      })) || undefined
+    })) || undefined
+  }));
+};
+export const HeadNav3 = (props: HeadNavProps) => {
+  const { logo, userName, cart,categoryList } = props;
   const [keywords, setKeywords] = useState("");
 
   const items = [
@@ -47,6 +61,15 @@ export const HeadNav2 = (props: HeadNavProps) => {
       </div>
 
       <div className={styles["input-area"]}>
+        <Cascader
+          className={styles["cmn-select"]}
+          options={transformCategoryList(categoryList)}
+          placeholder="Select Category"
+          onChange={(value) => {
+            window.location.href = `/search?categoryId=${value[0]}`;
+          }
+          }
+        />
         <Input
           placeholder="Search for products..."
           value={keywords}

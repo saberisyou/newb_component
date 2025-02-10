@@ -1,5 +1,5 @@
 import { Card as ACard, Col, Row } from "antd";
-import HeadNavFc, { HeadNav, HeadNav2 } from "../component/headNav";
+import HeadNavFc, {HeadNav, HeadNav2, HeadNav3} from "../component/headNav";
 import Layout from "./layout.tsx";
 const App = () => {
   const categoryList = [
@@ -313,11 +313,10 @@ const App = () => {
           </ACard>
         </Col>
         <Col span={24}>
-          <ACard id="HeadNav2" title="HeadNav2">
+          <ACard id="HeadNav2" title="HeadNav3">
             <HeadNav2
               userName={"saulyue"}
               cart={2}
-              categoryList={categoryList}
               logo={
                 "https://www.thethirdacsupply.com/mall/image/login-logo-2.png"
               }
@@ -326,9 +325,10 @@ const App = () => {
         </Col>
         <Col span={24}>
           <ACard id="HeadNav3" title="HeadNav3">
-            <HeadNav2
+            <HeadNav3
               userName={"saulyue"}
               cart={2}
+              categoryList={categoryList}
               logo={
                 "https://www.thethirdacsupply.com/mall/image/login-logo-2.png"
               }
