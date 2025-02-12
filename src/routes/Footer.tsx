@@ -1,4 +1,4 @@
-import {Card as ACard, Col, Row} from "antd";
+import { Card as ACard, Col, Row } from "antd";
 import FooterFc, { Footer, Footer2 } from "../component/footer";
 import Layout from "./layout.tsx";
 const App = () => {
@@ -12,17 +12,29 @@ const App = () => {
         </Col>
         <Col span={24}>
           <ACard id="Footer2" title="Footer2">
-            <Footer2 />
+            <Footer2
+              name={"name"}
+              address={"address"}
+              email={"email@email.com"}
+            />
           </ACard>
         </Col>
         <Col span={24}>
           <ACard id="Footer3" title="Footer3">
-            <Footer2 />
+            <Footer2
+              name={"name"}
+              address={"address"}
+              email={"email@email.com"}
+            />
           </ACard>
         </Col>
         <Col span={24}>
           <ACard id="Footer4" title="Footer4">
-            <Footer2 />
+            <Footer2
+              name={"name"}
+              address={"address"}
+              email={"email@email.com"}
+            />
           </ACard>
         </Col>
       </Row>

@@ -1,6 +1,13 @@
 import styles from "./styles.module.less";
 
-export const Footer2 = () => {
+interface FooterInfo {
+  name: string;
+  address: string;
+  email: string;
+  link?: string;
+}
+export const Footer2 = (props: FooterInfo) => {
+  const { name, address, email } = props;
   return (
     <div className={styles["footer-main"]}>
       <div className={styles["info-text"]}>
@@ -26,23 +33,18 @@ export const Footer2 = () => {
               <h3>Get In Touch</h3>
             </div>
             <ul className={styles["contact-list"]}>
+              <li>{address}</li>
               <li>
-                P2 Blk 11 lot 23, Pamayanang Maliksi Pasong Kawayan 2 Gen. Trias
-                cavite
-              </li>
-              <li>
-                <a href="mailto:thethirdcontrairconditioning@gmail.com">
-                  thethirdcontrairconditioning@gmail.com
-                </a>
+                <a href={`mailto:${email}`}>{email}</a>
               </li>
             </ul>
           </div>
         </div>
         <div className={styles["info-footer"]}>
-          <p>Thethirdacsupply</p>
+          <p>{name}</p>
         </div>
         <div className={styles["info-footer"]}>
-          <p>Copyright © 2024 Thethirdacsupply All Rights Reserved. </p>
+          <p>Copyright © 2024 {name} All Rights Reserved. </p>
         </div>
       </div>
     </div>
