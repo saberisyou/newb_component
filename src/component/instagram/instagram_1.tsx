@@ -1,5 +1,5 @@
 import "./styles.less";
-import {Card2} from "../card/Card_2.tsx";
+import { Card2 } from "../card";
 
 export const Instagram1 = () => {
   return (

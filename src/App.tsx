@@ -10,6 +10,7 @@ import HeadNav from "./routes/HeadNav.tsx";
 import HotAds from "./routes/HotAds.tsx";
 import AFooter from "./routes/Footer.tsx";
 import Cart from "./routes/Cart.tsx";
+import Sort from "./routes/Sort.tsx";
 
 const items = [
   {
@@ -39,6 +40,10 @@ const items = [
   {
     key: "cart",
     label: "cart - 购物车",
+  },
+  {
+    key: "sort",
+    label: "sort - 排序",
   },
   {
     key: "search",
@@ -115,6 +120,7 @@ const App: React.FC = () => {
             <Route path="/search" element={<Search />} />
             <Route path="/footer" element={<AFooter />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/sort" element={<Sort />} />
           </Routes>
           <Footer style={{ textAlign: "center" }}>
             <a href="https://beian.miit.gov.cn">

@@ -1,0 +1,38 @@
+.sort {
+  width:calc(100% - 40px);
+  border-radius: 23px;
+  background-color: #FEF4F6;
+  margin: 20px;
+  padding: 20px;
+  .active {
+    color: #000;
+    font-weight: 600;
+  }
+  .list {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    a{
+      color: #666;
+    }
+
+    div {
+      height: 20px;
+      line-height: 20px;
+      padding: 0 30px;
+      flex-shrink: 0;
+      cursor: pointer;
+      border-left: 1px solid #e0e0e0;
+      transition: color 0.2s;
+
+      :hover {
+        color: #1baeae;
+      }
+    }
+    div:nth-child(1) {
+      text-align: left;
+      padding-left: 0;
+      border-left: 0;
+    }
+  }
+}

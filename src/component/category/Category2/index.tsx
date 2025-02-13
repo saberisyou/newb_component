@@ -20,7 +20,7 @@ interface CategoryItemType {
 
 interface Category2Type {
   list: CategoryItemType[];
-  bannerList?: string[];
+  bannerList?: { carouselUrl: string; redirectUrl: string }[];
 }
 
 export const Category2 = (props: Category2Type) => {
@@ -63,15 +63,17 @@ export const Category2 = (props: Category2Type) => {
       </div>
       <div className={styles["category-banner"]}>
         <Carousel afterChange={onChange} arrows autoplay>
-          {bannerList ? (
-            bannerList.map((e) => {
-              return (
-                <div key={e}>
-                  <img src={e} />
-                </div>
-              );
-            })
-          ) : null}
+          {bannerList
+            ? bannerList.map((e) => {
+                return (
+                  <div key={e.carouselUrl} onClick={()=>{
+                    window.location.href = e.redirectUrl;
+                  }}>
+                    <img src={e.carouselUrl} />
+                  </div>
+                );
+              })
+            : null}
         </Carousel>
       </div>
     </Flex>

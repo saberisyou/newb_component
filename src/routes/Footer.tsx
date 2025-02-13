@@ -11,7 +11,7 @@ const App = () => {
           </ACard>
         </Col>
         <Col span={24}>
-          <ACard id="Footer2" title="Footer2">
+          <ACard id="Footer2" title="Index">
             <Footer2
               name={"name"}
               address={"address"}
