@@ -1,5 +1,5 @@
 import { Card as ACard, Col, Row } from "antd";
-import HeadNavFc, {HeadNav, HeadNav2, HeadNav3} from "../component/headNav";
+import HeadNavFc, {HeadNav, HeadNav2, HeadNav3, HeadNav4} from "../component/headNav";
 import Layout from "./layout.tsx";
 const App = () => {
   const categoryList = [
@@ -337,7 +337,7 @@ const App = () => {
         </Col>
         <Col span={24}>
           <ACard id="HeadNav4" title="HeadNav4">
-            <HeadNav2
+            <HeadNav4
               userName={"saulyue"}
               cart={2}
               logo={

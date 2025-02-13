@@ -1,5 +1,5 @@
 import {Card as ACard, Col, Row} from "antd";
-import CartFc,{Cart, Cart2} from "../component/cart";
+import CartFc, {Cart, Cart2, Cart3} from "../component/cart";
 import Layout from "./layout.tsx";
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
           </ACard>
         </Col>
         <Col span={24}>
-          <ACard id="Cart2" title="Cart2">
+          <ACard id="Cart2" title="Index">
             <Cart2
               title={"Carttitle"}
               price={"$76.89"}
@@ -28,7 +28,7 @@ const App = () => {
 
         <Col span={24}>
           <ACard id="Cart3" title="Cart3">
-            <Cart2
+            <Cart3
               title={"Carttitle"}
               price={"$76.89"}
               disPrice={"$76.89"}

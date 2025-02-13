@@ -23,7 +23,7 @@ interface Category2Type {
   bannerList?: { carouselUrl: string; redirectUrl: string }[];
 }
 
-export const Category2 = (props: Category2Type) => {
+ const Category = (props: Category2Type) => {
   const { list, bannerList } = props;
   const onChange = (currentSlide: number) => {
     console.log(currentSlide);
@@ -79,3 +79,4 @@ export const Category2 = (props: Category2Type) => {
     </Flex>
   );
 };
+export default Category;

@@ -1,5 +1,5 @@
 import { Card as ACard, Col, Row } from "antd";
-import FooterFc, { Footer, Footer2 } from "../component/footer";
+import FooterFc, {Footer, Footer2, Footer3} from "../component/footer";
 import Layout from "./layout.tsx";
 const App = () => {
   return (
@@ -21,7 +21,10 @@ const App = () => {
         </Col>
         <Col span={24}>
           <ACard id="Footer3" title="Footer3">
-            <Footer2
+            <Footer3
+              logo={
+                "https://www.thethirdacsupply.com/mall/image/login-logo-2.png"
+              }
               name={"name"}
               address={"address"}
               email={"email@email.com"}

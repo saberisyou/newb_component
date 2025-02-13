@@ -1,72 +1,81 @@
-.category{
+.category {
   width: 100%;
-
+  background: #fff;
 }
 .details-list {
   font-family: "Kanit", sans-serif;
   display: flex;
-  margin-bottom: 20px;
-  .details-list-item{
-    background: rgba(244, 246, 250, 0.5);
+  .details-list-item {
     font-size: 14px;
     font-weight: 400;
-    padding: 8px 12px ;
+    padding: 8px 12px;
     display: flex;
     white-space: nowrap;
     position: relative;
     transition: all 0.2s;
-    .details-list-item-a{
+    border-bottom: 2px solid #fff;
+    .details-list-item-a {
       color: #000;
       transition: all 0.2s;
     }
-    &:last-child{
-      border: none;
-    }
-    &:hover{
+    &:hover {
       cursor: pointer;
-      background: rgba(244, 246, 250, 1);
-      .details-list-item-a{
-        color: #4376FB;
+      border-bottom: 2px solid #4376fb;
+      .details-list-item-a {
+        color: #4376fb;
       }
-      .details-list-item-extra{
+      .details-list-item-extra {
         display: flex;
+      }
+      &:after {
+        content: "";
+        height: 20px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 52px;
       }
     }
   }
-  .details-list-item-extra{
+  .details-list-item-extra {
     position: absolute;
     left: 0;
-    top: 36px;
-    flex-direction: column;
-    background: #eee;
+    top: 40px;
+    width: 800px;
+    padding: 20px;
+    flex-wrap: wrap;
     display: none;
-    border-top: 1px solid rgba(213, 213, 213, 0.5);
     transition: all 0.2s;
     z-index: 100;
-   .details-list-subitem-a{
-      background: #fafafc;
-      font-size: 18px;
+    background: #fff;
+    gap: 8px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    .details-list-subitem-a {
+      flex: 0 1 20%;
+      font-size: 14px;
       font-weight: 400;
-      padding: 8px 25px;
+      padding: 8px 12px;
       display: flex;
+      background: #eee;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid rgba(213, 213, 213, 0.5);
       position: relative;
-     transition: all 0.2s;
-      &:hover{
+      transition: all 0.2s;
+      color: #000;
+      &:hover {
         background: #f2f2f4;
-        color: #4376FB;
+        color: #4376fb;
       }
     }
   }
 }
 
-.category-banner{
+.category-banner {
   background: #eee;
   img {
     width: 100%;
-    height:360px;
+    height: 360px;
     object-fit: cover;
     object-position: center;
   }
