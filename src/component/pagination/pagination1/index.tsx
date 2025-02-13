@@ -28,7 +28,6 @@ const PaginationFc = ({
   };
 
   return (
-    <div className={styles.goods_item}>
       <div className={styles.pages}>
         <div className={styles.page_wrap}>
           <span className={styles.page_span1}>
@@ -82,7 +81,6 @@ const PaginationFc = ({
           </span>
         </div>
       </div>
-    </div>
   );
 };
 
