@@ -9,6 +9,8 @@ import HeadNav from "./component/headNav";
 import Footer from "./component/footer";
 import { render } from "./render.ts";
 import Cart from "./component/cart";
+import Sort from "./component/sort";
+import Pagination from "./component/pagination";
 
 export {
   render,
@@ -20,7 +22,9 @@ export {
   Login,
   HotAds,
   Instagram,
-  Cart
+  Cart,
+  Sort,
+  Pagination,
 };
 export default {
   render,
@@ -32,5 +36,7 @@ export default {
   Login,
   HotAds,
   Instagram,
-  Cart
+  Cart,
+  Sort,
+  Pagination,
 };

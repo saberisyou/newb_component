@@ -21,7 +21,7 @@ interface Category4Type {
   list: CategoryItemType[];
 }
 
-export const Category4 = (props: Category4Type) => {
+ const Category = (props: Category4Type) => {
   const { list } = props;
   return (
     <div className={styles["category"]}>
@@ -54,3 +54,4 @@ export const Category4 = (props: Category4Type) => {
     </div>
   );
 };
+export default Category;

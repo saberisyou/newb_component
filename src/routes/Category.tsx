@@ -1,6 +1,7 @@
 import { Card as ACard, Col, Row } from "antd";
 import Layout from "./layout.tsx";
-import CategoryFc, {Category, Category2, Category4} from "../component/category";
+import CategoryFc, {Category1, Category2, Category4} from "../component/category";
+import {Category1Data} from "../mock/Category.ts";
 const categoryList = [
   {
     categoryId: 10001,
@@ -303,8 +304,8 @@ const App = () => {
     <Layout menu={Object.keys(CategoryFc)}>
       <Row gutter={[16, 16]}>
         <Col span={24}>
-          <ACard id="Category" title="Category">
-            <Category  />
+          <ACard id="Category1" title="Category1">
+            <Category1 data={Category1Data}/>
           </ACard>
         </Col>
         <Col span={24}>

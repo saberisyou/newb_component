@@ -11,6 +11,7 @@ import HotAds from "./routes/HotAds.tsx";
 import AFooter from "./routes/Footer.tsx";
 import Cart from "./routes/Cart.tsx";
 import Sort from "./routes/Sort.tsx";
+import Pagination from "./routes/Pagination.tsx";
 
 const items = [
   {
@@ -44,6 +45,10 @@ const items = [
   {
     key: "sort",
     label: "sort - 排序",
+  },
+  {
+    key: "pagination",
+    label: "pagination - 分页",
   },
   {
     key: "search",
@@ -121,6 +126,7 @@ const App: React.FC = () => {
             <Route path="/footer" element={<AFooter />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/sort" element={<Sort />} />
+            <Route path="/pagination" element={<Pagination />} />
           </Routes>
           <Footer style={{ textAlign: "center" }}>
             <a href="https://beian.miit.gov.cn">

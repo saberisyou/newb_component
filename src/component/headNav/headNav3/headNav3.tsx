@@ -64,7 +64,7 @@ export const HeadNav3 = (props: HeadNavProps) => {
         <Cascader
           className={styles["cmn-select"]}
           options={transformCategoryList(categoryList)}
-          placeholder="Select Category"
+          placeholder="Select Index"
           onChange={(value) => {
             window.location.href = `/search?categoryId=${value[0]}`;
           }
