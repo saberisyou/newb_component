@@ -46,7 +46,7 @@ export const HeadNav = (props: HeadNavProps) => {
       <div style={{ flex: 1 }}></div>
       <div className={styles["input-area"]}>
         <Input
-          placeholder="Search for products..."
+          placeholder="Index for products..."
           value={keywords}
           onChange={(e) => setKeywords(e.target.value)}
         />
@@ -56,7 +56,7 @@ export const HeadNav = (props: HeadNavProps) => {
             window.location.href = `/search?keywords=${keywords}`;
           }}
         >
-          Search
+          Index
         </button>
       </div>
       <div className={styles["header-right"]}>

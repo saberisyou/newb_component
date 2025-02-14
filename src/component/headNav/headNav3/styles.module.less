@@ -1,9 +1,55 @@
+.w{
+  display: flex;
+  gap: 20px;
+  width: 1488px;
+  margin: 0 auto;
+}
+.header-top {
+  border-bottom: 1px solid rgba(213, 213, 213, 0.5);
+  padding: 8px 0 ;
+  font-size:14px ;
+  a {
+    color: #4376FB;
+  }
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  .icon {
+    width: 24px;
+    height: 24px;
+    font-size: 18px;
+  }
+}
+.category-list {
+  flex: 1;
+  display: flex;
+  ul {
+    display: flex;
+    gap: 8px;
+    a {
+      color: #000;
+    }
+    li {
+      list-style: none;
+      padding: 0 16px;
+    }
+  }
+}
+.header-bottom{
+  padding: 12px 0;
+  .category-list{
+    justify-content: center;
+    font-size: 12px;
+  }
+}
 .header-main {
   display: flex;
   border-bottom: 1px solid rgba(213, 213, 213, 0.5);
   background: #fff;
-  gap: 100px;
-  padding: 10px 36px;
+  gap: 20px;
+  padding: 10px 0;
   align-items: center;
   font-family: "Kanit", sans-serif;
 }
@@ -19,7 +65,7 @@
   cursor: pointer;
   &:hover {
     color: #4376fb;
-    .icon{
+    .icon {
       color: #000;
     }
   }
@@ -37,8 +83,8 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  img{
-    height:68px;
+  img {
+    height: 68px;
   }
 }
 .icon {
@@ -53,18 +99,18 @@
   font-size: 22px;
   flex-shrink: 0;
 }
-.content{
+.content {
   white-space: nowrap;
 }
 .input-area {
   position: relative;
-  width: 520px;
+ flex: 1;
   height: 54px;
   display: flex;
   align-items: center;
-  border: 1px solid #d5d5d5;
+  border: 2px solid #d5d5d5;
   padding: 0 16px;
-  border-radius:50px;
+  border-radius: 50px;
   input {
     outline: none;
     border: none;
@@ -80,31 +126,29 @@
       box-shadow: none;
     }
   }
-  .cmn-btn {
-    outline: none;
-    border: none;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 7px;
-    color: #fff;
-    background-color: #EF2853;
-    padding: 13px 16px;
-    line-height: 1;
-    font-size: 14px;
-    border-radius: 50px;
-    font-family: "Kanit", sans-serif;
-  }
-  .cmn-select{
+
+  .cmn-select {
     white-space: nowrap;
-    border-right:  1px solid #d5d5d5;
+    border-right: 1px solid #d5d5d5;
     padding-right: 16px;
     margin-right: 8px;
-    :global{
-      .ant-select-selector{
+    :global {
+      .ant-select-selector {
         border: none;
-        box-shadow: none!important;
+        box-shadow: none !important;
       }
     }
   }
+}
+.cmn-btn {
+  outline: none;
+  border: none;
+  color: #fff;
+  background-color: #4376FB;
+  padding: 27px;
+  width: 200px;
+  line-height: 1;
+  font-size: 16px;
+  border-radius: 50px;
+  font-family: "Jost", sans-serif;
 }

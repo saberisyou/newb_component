@@ -7,16 +7,7 @@ const Card = () => {
   return (
     <Layout menu={Object.keys(CardFc)}>
       <Row gutter={[16,16]}>
-        <Col span={24}>
-          <ACard id="Card6" title="Card6">
-            <Card6
-              span={6}
-              list={recommendGoodses}
-              title={"Exclusive Products"}
-              subtitle={"Our Products"}
-            />
-          </ACard>
-        </Col>
+
         <Col span={24}>
           <ACard id="Card1" title="Card1">
             <Card1 list={card3Data} />
@@ -73,7 +64,17 @@ const Card = () => {
             />
           </ACard>
         </Col>
-
+        <Col span={24}>
+          <ACard id="Card6" title="Card6">
+            <Card6
+              span={6}
+              list={recommendGoodses}
+              title={"Exclusive Products"}
+              subtitle={"Our Products"}
+              border
+            />
+          </ACard>
+        </Col>
 
       </Row>
     </Layout>

@@ -11,6 +11,7 @@ import { render } from "./render.ts";
 import Cart from "./component/cart";
 import Sort from "./component/sort";
 import Pagination from "./component/pagination";
+import Banner from "./component/banner";
 
 export {
   render,
@@ -25,6 +26,7 @@ export {
   Cart,
   Sort,
   Pagination,
+  Banner
 };
 export default {
   render,
@@ -39,4 +41,5 @@ export default {
   Cart,
   Sort,
   Pagination,
+  Banner
 };

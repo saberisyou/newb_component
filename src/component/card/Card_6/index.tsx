@@ -67,7 +67,11 @@ interface Card4Props {
                 <Space direction="vertical" className={styles["body"]}>
                   <p className={styles["intro"]}>{goodsIntro}</p>
                   <p className={styles["name"]}>{goodsName}</p>
-                  <Rate disabled defaultValue={rate} style={{fontSize: '12px'}}/>
+                  <Rate
+                    disabled
+                    defaultValue={rate}
+                    style={{ fontSize: "12px" }}
+                  />
                   <p className={styles["item_price"]}>
                     ₱{sellingPrice.toLocaleString()}.00
                     {discount && (
@@ -76,9 +80,11 @@ interface Card4Props {
                       </span>
                     )}
                   </p>
-                  <div className={styles.cart} onClick={cart}>
-                    Read More {'>>'}
-                  </div>
+                  {!border && (
+                    <div className={styles.cart} onClick={cart}>
+                      Read More {">>"}
+                    </div>
+                  )}
                 </Space>
               </div>
             </Col>

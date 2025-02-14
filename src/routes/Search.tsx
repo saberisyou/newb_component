@@ -1,13 +1,13 @@
 import { Typography } from "antd";
-import {Search} from "../index.ts";
 import Layout from "./layout.tsx";
+import Search from "../component/search";
 const { Title } = Typography;
 
 const App = () => {
   return (
     <Layout menu={['Search']}>
       <Title>Search</Title>
-      <Search />
+      <Search.Search1 />
     </Layout>
   );
 };

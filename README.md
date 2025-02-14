@@ -16,30 +16,30 @@ Currently, two official plugins are available:
 ### 在src/component中开发组件
 
 ```js
-// src/Search.tsx 
+// src/index.tsx 
 import React from "react";
 import "./styles.less";
 
-const Search: React.FC = (props: any) => {
+const Index: React.FC = (props: any) => {
   return (
     <div>
       {props.name}
-      <input type="text" placeholder="Search..." className='Search'/>
-      <button>Search</button>
+      <input type="text" placeholder="Index..." className='Index'/>
+      <button>Index</button>
     </div>
   );
 };
 
-export default Search;
+export default Index;
 ```
 
 ### 在src/index中导出组件
 
 ```js
-import Search from "./component/Search";
+import Index from "./component/Index";
 import Login from "./component/Login";
 
-export { Search, Login };
+export { Index, Login };
 ```
 
 ### 构建

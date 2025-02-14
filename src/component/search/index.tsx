@@ -1,4 +1,4 @@
-import { Search } from "./Search";
+import Search1 from "./search1";
 
-export { Search };
-export default Search
+export { Search1 };
+export default { Search1 };

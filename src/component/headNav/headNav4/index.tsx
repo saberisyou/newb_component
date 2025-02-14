@@ -63,7 +63,7 @@ const HeadNav = (props: HeadNavProps) => {
 
       <div className={styles["input-area"]}>
         <Input
-          placeholder="Search for products..."
+          placeholder="Index for products..."
           value={keywords}
           onChange={(e) => setKeywords(e.target.value)}
         />

@@ -9,16 +9,18 @@
   .subtitle {
     text-align: center;
   }
-  .card {
-    .img_box {
-      border-radius: 0;
-      background: none;
-    }
-    .body {
-      border-top: 1px solid #d5d5d5;
-      border-radius: 0;
-      margin: 0;
-      background: none;
+  .card_list{
+    .card {
+      border: none;
+      .img_box {
+        border-radius: 8px;
+        background: #eee;
+      }
+      .body {
+        border-radius: 0;
+        margin: 0;
+        background: none;
+      }
     }
   }
 }
@@ -36,7 +38,6 @@
 }
 .card_list {
   padding: 16px 0;
-
   .card {
     box-sizing: border-box;
     flex: 0 1 calc(20% - 16px); /* 25% 减去左右间距的一半 */
@@ -63,6 +64,7 @@
     text-align: center;
     position: relative;
     height: 220px;
+    padding: 20px;
     .tag {
       position: absolute;
       top: 12px;

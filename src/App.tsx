@@ -12,6 +12,7 @@ import AFooter from "./routes/Footer.tsx";
 import Cart from "./routes/Cart.tsx";
 import Sort from "./routes/Sort.tsx";
 import Pagination from "./routes/Pagination.tsx";
+import Banner from "./routes/Banner.tsx";
 
 const items = [
   {
@@ -54,6 +55,10 @@ const items = [
     key: "search",
     label: "search - 搜索",
   },
+  {
+    key: "banner",
+    label: "banner - 背景主图",
+  },
 ];
 
 const App: React.FC = () => {
@@ -83,10 +88,11 @@ const App: React.FC = () => {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={[window.location.hash.substr(2) || "card"]}
+          defaultSelectedKeys={[window.location.href.split('/').pop()?.split('#')[0] || "card"]}
           items={items}
           onClick={(e) => {
             navigate(e.key);
+            document.getElementById('content')?.scrollTo({ top: 0, behavior: 'auto' });
           }}
         />
       </Sider>
@@ -110,7 +116,7 @@ const App: React.FC = () => {
         <Content
           id="content"
           style={{
-            padding: "48px",
+            padding: "24px 48px",
             height: "calc(100vh - 64px)",
             overflowY: "auto",
           }}
@@ -127,6 +133,7 @@ const App: React.FC = () => {
             <Route path="/cart" element={<Cart />} />
             <Route path="/sort" element={<Sort />} />
             <Route path="/pagination" element={<Pagination />} />
+            <Route path="/banner" element={<Banner />} />
           </Routes>
           <Footer style={{ textAlign: "center" }}>
             <a href="https://beian.miit.gov.cn">
