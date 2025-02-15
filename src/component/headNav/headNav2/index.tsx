@@ -15,7 +15,7 @@ interface HeadNavProps {
 
 
 
-export const HeadNav2 = (props: HeadNavProps) => {
+ const HeadNav = (props: HeadNavProps) => {
   const { logo, userName, cart } = props;
   const [keywords, setKeywords] = useState("");
 
@@ -58,7 +58,7 @@ export const HeadNav2 = (props: HeadNavProps) => {
             window.location.href = `/search?keywords=${keywords}`;
           }}
         >
-          Index
+          Search
         </button>
       </div>
       <div style={{ flex: 1 }}></div>
@@ -116,3 +116,4 @@ export const HeadNav2 = (props: HeadNavProps) => {
     </div>
   );
 };
+export default HeadNav;

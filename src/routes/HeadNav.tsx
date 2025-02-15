@@ -24,7 +24,7 @@ const App = () => {
           </ACard>
         </Col>
         <Col span={24}>
-          <ACard id="HeadNav2" title="Index">
+          <ACard id="HeadNav2" title="HeadNav2">
             <HeadNav2
               userName={"saulyue"}
               cart={2}
