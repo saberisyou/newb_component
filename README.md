@@ -83,6 +83,7 @@ pnpm run build
       console.log(Newbee);
       render(document.getElementById('Login'),Card.Card3,{list:newGoodses,title:"yueyue"})
     </script>
+    saulyue
   </head>
   <body>
     <div id="Login"></div>
