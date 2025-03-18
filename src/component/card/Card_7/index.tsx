@@ -40,7 +40,6 @@ interface Card4Props {
             sellingPrice,
             rate = 4,
             tag,
-            cart,
           } = e;
           return (
             <Col
@@ -72,7 +71,7 @@ interface Card4Props {
                   <Rate
                     disabled
                     defaultValue={rate}
-                    style={{ fontSize: "12px" }}
+                    style={{ fontSize: "12px", color: "#292929" }}
                   />
                   <p className={styles["item_price"]}>
                     ₱{sellingPrice.toLocaleString()}.00
@@ -82,11 +81,6 @@ interface Card4Props {
                       </span>
                     )}
                   </p>
-                  {!border && (
-                    <div className={styles.cart} onClick={cart}>
-                      Read More {">>"}
-                    </div>
-                  )}
                 </Space>
               </div>
             </Col>

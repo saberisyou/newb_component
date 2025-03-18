@@ -1,4 +1,11 @@
-import CardFc, {Card1, Card2, Card3, Card4, Card5, Card6} from "../component/card";
+import CardFc, {
+  Card1,
+  Card2,
+  Card3,
+  Card4,
+  Card5,
+  Card6,
+} from "../component/card";
 import { card3Data, recommendGoodses } from "../mock/Card";
 import Layout from "./layout.tsx";
 import { Card as ACard, Row, Col } from "antd";
@@ -6,8 +13,7 @@ import { Card as ACard, Row, Col } from "antd";
 const Card = () => {
   return (
     <Layout menu={Object.keys(CardFc)}>
-      <Row gutter={[16,16]}>
-
+      <Row gutter={[16, 16]}>
         <Col span={24}>
           <ACard id="Card1" title="Card1">
             <Card1 list={card3Data} />
@@ -52,7 +58,7 @@ const Card = () => {
               title={"Exclusive Products"}
               subtitle={"Our Products"}
             />
-           <div style={{height:20}}></div>
+            <div style={{ height: 20 }}></div>
             <Card5
               span={6}
               list={recommendGoodses.map((e) => ({
@@ -75,7 +81,16 @@ const Card = () => {
             />
           </ACard>
         </Col>
-
+        <Col span={24}>
+          <ACard id="Card7" title="Card7">
+            <CardFc.Card7
+              span={4}
+              list={recommendGoodses}
+              // title={"Exclusive Products"}
+              // subtitle={"Our Products"}
+            />
+          </ACard>
+        </Col>
       </Row>
     </Layout>
   );
