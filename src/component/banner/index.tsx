@@ -1,3 +1,4 @@
 import Banner1 from "./banner1";
-export { Banner1 };
-export default { Banner1 };
+import Banner2 from "./banner2";
+export { Banner1 ,Banner2};
+export default { Banner1,Banner2 };

@@ -81,3 +81,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git push origin HEAD:${{ github.ref }}
+
+      # 构建HTML
+      - name: Build HTML
+        run: npm run build:html
+
+      # 部署到远程服务器
+      - name: Deploy to server
+        uses: appleboy/scp-action@master
+        with:
+          host: 146.56.250.72
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
+          source: "html/*"
+          target: "/usr/share/nginx/html"
