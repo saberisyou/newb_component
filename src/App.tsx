@@ -69,7 +69,7 @@ const App: React.FC = () => {
   return (
     <Layout>
       <Sider breakpoint="lg" collapsedWidth="0">
-        <Badge offset={[0, 24]} count={<Tag color="green">Prod.Beta</Tag>}>
+        <Badge offset={[0, 24]} count={<Tag color="green">Prod</Tag>}>
           <div
             className="demo-logo-vertical"
             style={{
